@@ -1,7 +1,11 @@
 <script lang="ts">
-	import DarkModeSwitch from '../lib/DarkModeSwitch.svelte';
-
 	import '../tailwind.scss';
 </script>
 
 <slot />
+
+<style lang="scss" global>
+	.dark .prose {
+		--tw-prose-headings: #fff;
+	}
+</style>
