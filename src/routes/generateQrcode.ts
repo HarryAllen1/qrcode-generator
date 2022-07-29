@@ -15,7 +15,7 @@ export const GET: RequestHandler = async (stuff) => {
 		};
 	const url = decodeURIComponent(urlParam);
 
-	const data = {
+	const body = {
 		png: (
 			await sharp(await QRCode.toBuffer(url))
 				.png()
@@ -44,6 +44,6 @@ export const GET: RequestHandler = async (stuff) => {
 		headers: {
 			'access-control-allow-origin': '*',
 		},
-		body: data,
+		body,
 	};
 };
