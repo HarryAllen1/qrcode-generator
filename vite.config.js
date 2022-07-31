@@ -1,13 +1,11 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
-/** @type {import('vite').UserConfig} */
-const config = {
+export default defineConfig({
 	plugins: [sveltekit()],
 	esbuild: {
 		banner: {
 			js: "import { createRequire } from 'module';const require = createRequire(import.meta.url);",
 		},
 	},
-};
-
-export default config;
+});
