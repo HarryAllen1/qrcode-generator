@@ -12,7 +12,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			edge: true,
+			// cannot use sharp in edge functions :(
+			edge: false,
 		}),
 	},
 };
