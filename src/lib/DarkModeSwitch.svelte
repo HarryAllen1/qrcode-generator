@@ -29,7 +29,7 @@
 	});
 </script>
 
-<div class="flex items-start justify-center w-screen mb-4">
+<div class="flex items-start justify-center mb-4">
 	<SwitchGroup as="div" class="flex items-center space-x-4">
 		<SwitchLabel class="text-black dark:text-white">Dark Mode</SwitchLabel>
 		<Switch

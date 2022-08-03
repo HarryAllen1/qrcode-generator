@@ -46,7 +46,6 @@
 </script>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
-
 <DarkModeSwitch />
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div>
@@ -127,6 +126,7 @@
 		/>
 	</div>
 </div>
+<h6><a href="/api" class="dark:text-gray-400">QR Code API</a></h6>
 
 <style lang="scss">
 	.pixelated {
