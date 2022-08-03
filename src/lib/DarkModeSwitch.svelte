@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Switch, SwitchGroup, SwitchLabel } from '@rgossiaux/svelte-headlessui';
+	import { onMount } from 'svelte';
 
 	function classNames(...classes: (string | false | null | undefined)[]) {
 		return classes.filter(Boolean).join(' ');
@@ -22,6 +23,10 @@
 	}
 
 	$: state = false;
+
+	onMount(() => {
+		state = document.documentElement.classList.contains('dark');
+	});
 </script>
 
 <div class="flex items-start justify-center w-screen mb-4">
