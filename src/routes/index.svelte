@@ -48,7 +48,7 @@
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
 
 <DarkModeSwitch />
-<div class="flex flex-col md:flex-row space-x-4 space-y-4">
+<div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div>
 		{#await data}
 			<p>loading qrcode....</p>
