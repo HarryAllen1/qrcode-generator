@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "QR Code Generator",
+	"short_name": "QRCode Gen",
+	"start_url": "/",
+	"theme_color": "#2563eb",
+	"description": "A no bs QR code generator",
+	"icons": [
+		{
+			"src": "./favicon.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}

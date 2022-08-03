@@ -32,17 +32,17 @@
 
 	$: selectedFormat = format[0];
 	$: margin = 4;
+	$: resolution = 1080;
 
-	$: url,
-		selectedFormat,
-		margin,
-		(data = fetch(
-			new URL(
-				$page.url.href +
-					`generateQrcode?format=${selectedFormat.format}&margin=${margin}&text=` +
-					encodeURIComponent(url)
-			)
-		).then(async (res) => await res.json()) as any);
+	$: data = fetch(
+		new URL(
+			$page.url.href +
+				`generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
+					resolution || 1080
+				}&text=` +
+				encodeURIComponent(url || 'https://google.com/')
+		)
+	).then(async (res) => await res.json()) as any;
 </script>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
@@ -50,11 +50,11 @@
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div>
 		{#await data}
-			<p>loading qrcode....</p>
+			<img class="w-96 pixelated shadow-md" src="/placeholder.png" alt="placeholder" />
 		{:then image}
 			<img
-				class="w-72 pixelated"
-				src={image.type === 'svg' ? image.asDataURL : image.data}
+				class="w-96 pixelated shadow-md"
+				src={!image.data ? '/placeholder.png' : image.type === 'svg' ? image.asDataURL : image.data}
 				alt="qrcode"
 			/>
 		{:catch}
@@ -63,13 +63,13 @@
 	</div>
 	<div>
 		<h2 class="mt-2">Options</h2>
-		<p class="mb-1">Text</p>
+		<p class="mb-1">Text/URL</p>
 		<input
 			bind:value={url}
-			type="url"
+			type="text"
 			spellcheck={false}
 			placeholder="URL"
-			class="flex items-center w-72 mb-4 text-left space-x-3 px-4 h-12 bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-black dark:bg-gray-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5"
+			class="input dark:bg-gray-800 dark:text-slate-300"
 		/>
 		<p class="mb-1">Image Format</p>
 		<div class="mb-6 relative">
@@ -89,7 +89,7 @@
 						leaveTo="opacity-0"
 					>
 						<ListboxOptions
-							class="absolute w-full marker:!hidden pl-0 py-1 mt-1 overflow-auto text-base max-h-60 sm:text-sm rounded-lg border text-black dark:text-white border-white border-opacity-10 bg-gray-900 bg-opacity-80 p-1 backdrop-blur backdrop-filter focus-visible:outline-none focus-visible:ring"
+							class="absolute w-full marker:!hidden pl-0 py-1 mt-1 overflow-auto text-base max-h-60 sm:text-sm rounded-lg border text-black dark:text-white border-white border-opacity-10 bg-white dark:bg-gray-900 bg-opacity-80 p-1 backdrop-blur backdrop-filter focus-visible:outline-none focus-visible:ring"
 						>
 							{#each format as person, personIdx (personIdx)}
 								<ListboxOption
@@ -122,7 +122,14 @@
 			bind:value={margin}
 			type="number"
 			placeholder="Margin"
-			class="flex items-center w-72 mb-4 text-left space-x-3 px-4 h-12 bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-black dark:bg-gray-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5"
+			class="input dark:bg-gray-800 dark:text-slate-300"
+		/>
+		<p class="mb-1">Image Resolution/Size</p>
+		<input
+			bind:value={resolution}
+			type="number"
+			placeholder="Resolution"
+			class="input dark:bg-gray-800 dark:text-slate-300"
 		/>
 	</div>
 </div>
@@ -134,5 +141,9 @@
 	}
 	::marker {
 		display: none;
+	}
+
+	:global(input.input) {
+		@apply flex items-center w-72 mb-4 shadow-md text-left space-x-3 px-4 h-12 bg-white focus:outline-none focus:ring-2 rounded-lg text-black dark:ring-0;
 	}
 </style>
