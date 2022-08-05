@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { Switch, SwitchGroup, SwitchLabel } from '@rgossiaux/svelte-headlessui';
 	import { onMount } from 'svelte';
+	import { state } from './dark-mode';
 
 	function classNames(...classes: (string | false | null | undefined)[]) {
 		return classes.filter(Boolean).join(' ');
 	}
 
 	function update() {
-		localStorage.theme = state ? 'dark' : 'light';
+		localStorage.theme = $state ? 'dark' : 'light';
 
 		if (
 			localStorage.theme === 'dark' ||
@@ -22,10 +23,10 @@
 		});
 	}
 
-	$: state = false;
+	$state = false;
 
 	onMount(() => {
-		state = document.documentElement.classList.contains('dark');
+		$state = document.documentElement.classList.contains('dark');
 	});
 </script>
 
@@ -34,9 +35,9 @@
 		<SwitchLabel class="text-black dark:text-white">Dark Mode</SwitchLabel>
 		<Switch
 			as="button"
-			checked={state}
+			checked={$state}
 			on:change={(event) => {
-				state = event.detail;
+				$state = event.detail;
 				update();
 			}}
 			class={({ checked }) =>

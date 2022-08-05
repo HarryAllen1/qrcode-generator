@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import CodeBlock from '$lib/CodeBlock.svelte';
 	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 	import GithubIcon from '$lib/GithubIcon.svelte';
 
@@ -18,9 +19,9 @@
 <DarkModeSwitch />
 <p>This site has an API that allows developers to easily generate QR codes.</p>
 <p>Headers are not required to use the API</p>
-<p>The endpoint for this api is <code>https://{$page.url.host}/generateQrcode</code></p>
+<p>The endpoint for this api is <code>{$page.url.origin}/generateQrcode</code></p>
 <p>Example response (in JSON):</p>
-<pre class="max-w-full">{exampleResponse}</pre>
+<CodeBlock input={exampleResponse} />
 
 <h2>Required URL Params</h2>
 <ul>

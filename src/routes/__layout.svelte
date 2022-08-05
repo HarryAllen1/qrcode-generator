@@ -1,5 +1,6 @@
 <script lang="ts">
-	import '../tailwind.scss';
+	import '$lib/tailwind.scss';
+	import '$lib/pre.scss';
 </script>
 
 <slot />
