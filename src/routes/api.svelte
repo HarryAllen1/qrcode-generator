@@ -37,7 +37,7 @@
 		<li>The format of the returned image. Can be one of the following:</li>
 		<ul>
 			<li>
-				<code>svg, png, jpg, jpeg, webp, avif, gif, tif, tiff, terminal</code>
+				<code>svg, png, jpg, jpeg, webp, avif, gif, terminal</code>
 			</li>
 		</ul>
 	</ul>

@@ -7,19 +7,9 @@ export const GET: RequestHandler = async (stuff) => {
 	const sizeParam = stuff.url.searchParams.get('size');
 	const formatParam = stuff.url.searchParams.get('format');
 	const marginParam = stuff.url.searchParams.get('margin');
+	const transparentParam = stuff.url.searchParams.get('transparent') === 'true';
 
-	const allowedFormats = [
-		'svg',
-		'png',
-		'jpg',
-		'jpeg',
-		'webp',
-		'avif',
-		'gif',
-		'tif',
-		'tiff',
-		'terminal',
-	];
+	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
 
 	if (!textParam)
 		return {
@@ -65,6 +55,9 @@ export const GET: RequestHandler = async (stuff) => {
 			const data = await QRCode.toString(url, {
 				type: formatParam as 'svg' | 'terminal',
 				margin: marginParam ? parseInt(marginParam) : undefined,
+				color: {
+					light: transparentParam ? '#0000' : '#fff',
+				},
 			});
 			return {
 				status: 200,
@@ -100,14 +93,16 @@ export const GET: RequestHandler = async (stuff) => {
 		const svgData = await QRCode.toString(url, {
 			type: 'svg',
 			margin: marginParam ? parseInt(marginParam) : undefined,
+			color: {
+				light: transparentParam ? '#0000' : '#fff',
+			},
 		});
 		const sharpProcessed = sharp(Buffer.from(svgData)).resize(
 			parseInt(sizeParam ?? '1080'),
 			parseInt(sizeParam ?? '1080')
 		);
 
-		const remappedFormat =
-			formatParam === 'tif' ? 'tiff' : formatParam === 'jpg' ? 'jpeg' : formatParam;
+		const remappedFormat = formatParam === 'jpg' ? 'jpeg' : formatParam;
 
 		return {
 			status: 200,

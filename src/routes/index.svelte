@@ -9,8 +9,17 @@
 		ListboxButton,
 		ListboxOption,
 		ListboxOptions,
+		Popover,
+		PopoverButton,
+		PopoverPanel,
+		Switch,
+		SwitchGroup,
+		SwitchLabel,
 		Transition,
 	} from '@rgossiaux/svelte-headlessui';
+	import { classNames } from '../lib/class-names';
+	import iro from '@jaames/iro';
+	import ChevronDown from '../lib/icons/ChevronDown.svelte';
 
 	$: url = 'https://google.com/';
 
@@ -37,17 +46,24 @@
 		{ format: 'gif' },
 		{ format: 'svg' },
 		{ format: 'tiff' },
-	] as const;
+	];
 
 	$: selectedFormat = format[0];
 	$: margin = 4;
 	$: resolution = 1080;
+	$: transparentBackground = false;
+	let transparentSliderDisabled = false;
+
+	$: if (selectedFormat.format === 'jpg') {
+		transparentBackground = false;
+		transparentSliderDisabled = true;
+	}
 
 	$: data = fetch(
 		$page.url.origin +
 			`/generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
 				resolution || 1080
-			}&text=` +
+			}&transparent=${transparentBackground}&text=` +
 			encodeURIComponent(url || 'https://google.com/')
 	)
 		.then(async (res) => {
@@ -152,6 +168,35 @@
 			placeholder="Resolution"
 			class="input dark:bg-gray-800 dark:text-slate-300"
 		/>
+		<details>
+			<summary>Colors</summary>
+			<div class="flex items-start mb-4">
+				<SwitchGroup as="div" class="flex items-center space-x-4">
+					<SwitchLabel class="text-black dark:text-white">Transparent Background</SwitchLabel>
+					<Switch
+						disabled={transparentSliderDisabled}
+						as="button"
+						checked={transparentBackground}
+						on:change={(event) => {
+							transparentBackground = event.detail;
+						}}
+						class={({ checked }) =>
+							classNames(
+								'relative inline-flex flex-shrink-0 h-6 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:shadow-outline transition-colors ease-in-out duration-200',
+								checked ? 'bg-blue-600' : 'bg-gray-400'
+							)}
+						let:checked
+					>
+						<span
+							class={classNames(
+								'inline-block w-5 h-5 bg-white rounded-full transform transition ease-in-out duration-200',
+								checked ? 'translate-x-5' : 'translate-x-0'
+							)}
+						/>
+					</Switch>
+				</SwitchGroup>
+			</div>
+		</details>
 	</div>
 </div>
 <h6><a href="/api" class="dark:text-gray-400">QR Code API</a></h6>
