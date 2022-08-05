@@ -27,10 +27,15 @@
 		color: #383a42;
 		border-radius: 4px;
 		padding: 3px 6px;
+		transition: background-color 0.5s, color 0.5s;
 
 		&::before,
 		&::after {
 			content: '';
 		}
+	}
+
+	body {
+		transition: background-color 0.5s, color 0.5s;
 	}
 </style>
