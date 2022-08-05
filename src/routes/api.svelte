@@ -5,7 +5,7 @@
 
 	const exampleResponse = `{
   "data": "Data URL of base64 encoded image or svg xml if the format is svg or unicode for the terminal thing",
-	"format": "Format of \`data\` property"
+  "format": "Format of \`data\` property"
 }`;
 </script>
 
