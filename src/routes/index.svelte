@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
+	import GithubIcon from '$lib/GithubIcon.svelte';
+	import CheckIcon from '$lib/icons/Check.svelte';
+	import SelectorIcon from '$lib/icons/Selector.svelte';
 	import {
 		Listbox,
 		ListboxButton,
@@ -7,18 +11,23 @@
 		ListboxOptions,
 		Transition,
 	} from '@rgossiaux/svelte-headlessui';
-	import { CheckIcon, SelectorIcon } from '@rgossiaux/svelte-heroicons/solid';
-	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 
 	$: url = 'https://google.com/';
+
+	let message = '';
 
 	let data: Promise<{
 		data: string;
 		type: string;
 		asDataURL: string;
-	}> = fetch(
-		new URL($page.url.href + 'generateQrcode?format=webp&text=' + encodeURIComponent(url))
-	).then(async (res) => await res.json()) as any;
+		status: number;
+		message: string;
+	}> = fetch($page.url.origin + '/generateQrcode?format=webp&text=' + encodeURIComponent(url))
+		.then(async (res) => {
+			message = '';
+			return await res.json();
+		})
+		.catch((e) => (message = e.toString())) as any;
 
 	const format = [
 		{ format: 'png' },
@@ -35,30 +44,42 @@
 	$: resolution = 1080;
 
 	$: data = fetch(
-		new URL(
-			$page.url.href +
-				`generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
-					resolution || 1080
-				}&text=` +
-				encodeURIComponent(url || 'https://google.com/')
-		)
-	).then(async (res) => await res.json()) as any;
+		$page.url.origin +
+			`/generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
+				resolution || 1080
+			}&text=` +
+			encodeURIComponent(url || 'https://google.com/')
+	)
+		.then(async (res) => {
+			message = '';
+			return await res.json();
+		})
+		.catch((e) => (message = e.toString())) as any;
 </script>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
+<GithubIcon />
 <DarkModeSwitch />
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div>
 		{#await data}
 			<img class="w-96 pixelated shadow-md" src="/placeholder.png" alt="placeholder" />
 		{:then image}
-			<img
-				class="w-96 pixelated shadow-md"
-				src={!image.data ? '/placeholder.png' : image.type === 'svg' ? image.asDataURL : image.data}
-				alt="qrcode"
-			/>
-		{:catch}
-			<p>malformed url</p>
+			{#if image.status === 400 || image.status === 500}
+				<p class="w-96">{image.message}</p>
+			{:else}
+				<img
+					class="w-96 pixelated shadow-md"
+					src={!image.data
+						? '/placeholder.png'
+						: image.type === 'svg'
+						? image.asDataURL
+						: image.data}
+					alt="qrcode"
+				/>
+			{/if}
+		{:catch e}
+			<p class="w-96">{e.message}</p>
 		{/await}
 	</div>
 	<div>

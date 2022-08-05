@@ -4,9 +4,6 @@ dependencies:
   '@rgossiaux/svelte-headlessui':
     specifier: ^1.0.2
     version: 1.0.2_svelte@3.49.0
-  '@rgossiaux/svelte-heroicons':
-    specifier: ^0.1.2
-    version: 0.1.2_svelte@3.49.0
   qrcode:
     specifier: ^1.5.1
     version: 1.5.1
@@ -20,7 +17,7 @@ devDependencies:
     version: 1.0.0-next.66
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.402_svelte@3.49.0+vite@3.0.4
+    version: 1.0.0-next.403_svelte@3.49.0+vite@3.0.4
   '@tailwindcss/typography':
     specifier: ^0.5.4
     version: 0.5.4_tailwindcss@3.1.7
@@ -192,14 +189,6 @@ packages:
       svelte: 3.49.0
     dev: false
 
-  /@rgossiaux/svelte-heroicons/0.1.2_svelte@3.49.0:
-    resolution: {integrity: sha512-c5Ep1QDvBo9HD/P0AxbXItDbn6x77fldCjjL0aBjNseUntV4fkdHkBde1IaLr8i0kmrhTSovjkIen8W83jUPzg==}
-    peerDependencies:
-      svelte: ^3.44.0
-    dependencies:
-      svelte: 3.49.0
-    dev: false
-
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
@@ -218,8 +207,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.402_svelte@3.49.0+vite@3.0.4:
-    resolution: {integrity: sha512-F0Mm+bTGOnl+vWKab5uwXsY+5YypC/uveGE0wKyYSE9a/pFQD20WwrvRKePGhUCepiHc7S82jxVZRwjCsToaNQ==}
+  /@sveltejs/kit/1.0.0-next.403_svelte@3.49.0+vite@3.0.4:
+    resolution: {integrity: sha512-pKlmthl1SZkbx671Jp+LBoRne0vNzsjSgta9iRhqW/bt/0mx/IjlMd/NOeLuJGo30dAJdefrySoSamiaq47M/g==}
     engines: {node: '>=16.9'}
     hasBin: true
     requiresBuild: true

@@ -1,19 +1,26 @@
 <script lang="ts">
-	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 	import { page } from '$app/stores';
+	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
+	import GithubIcon from '$lib/GithubIcon.svelte';
 
 	const exampleResponse = `{
-  "data": "Data URL of base64 encoded image or svg xml if the format is svg or unicode for the terminal thing"
+  "data": "Data URL of base64 encoded image or svg xml if the format is svg or unicode for the terminal thing",
+	"format": "Format of \`data\` property"
 }`;
 </script>
 
+<svelte:head>
+	<title>API - QR Code Generator</title>
+</svelte:head>
+
 <h1>QRCode API</h1>
+<GithubIcon />
 <DarkModeSwitch />
 <p>This site has an API that allows developers to easily generate QR codes.</p>
 <p>Headers are not required to use the API</p>
 <p>The endpoint for this api is <code>https://{$page.url.host}/generateQrcode</code></p>
 <p>Example response (in JSON):</p>
-<pre>{exampleResponse}</pre>
+<pre class="max-w-full">{exampleResponse}</pre>
 
 <h2>Required URL Params</h2>
 <ul>
