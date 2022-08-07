@@ -20,6 +20,7 @@
 	import { classNames } from '../lib/class-names';
 	import iro from '@jaames/iro';
 	import ChevronDown from '../lib/icons/ChevronDown.svelte';
+	import { onMount } from 'svelte';
 
 	$: url = 'https://google.com/';
 
@@ -52,6 +53,8 @@
 	$: margin = 4;
 	$: resolution = 1080;
 	$: transparentBackground = false;
+	$: foregroundColor = '#000000';
+	$: backgroundColor = '#ffffff';
 	let transparentSliderDisabled = false;
 
 	$: if (selectedFormat.format === 'jpg') {
@@ -63,7 +66,7 @@
 		$page.url.origin +
 			`/generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
 				resolution || 1080
-			}&transparent=${transparentBackground}&text=` +
+			}&text=` +
 			encodeURIComponent(url || 'https://google.com/')
 	)
 		.then(async (res) => {
@@ -71,6 +74,17 @@
 			return await res.json();
 		})
 		.catch((e) => (message = e.toString())) as any;
+
+	let foregroundPickerEl: HTMLDivElement;
+	let iroColorPicker: iro.ColorPicker;
+
+	onMount(() => {
+		// @ts-ignore
+		iroColorPicker = new iro.ColorPicker(foregroundPickerEl, {
+			color: '#000',
+			width: 300,
+		});
+	});
 </script>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
@@ -170,6 +184,8 @@
 		/>
 		<details>
 			<summary>Colors</summary>
+			<p class="mb-0">Foreground Color</p>
+			<div id="foreground-picker" class="mb-4" bind:this={foregroundPickerEl} />
 			<div class="flex items-start mb-4">
 				<SwitchGroup as="div" class="flex items-center space-x-4">
 					<SwitchLabel class="text-black dark:text-white">Transparent Background</SwitchLabel>

@@ -7,7 +7,8 @@ export const GET: RequestHandler = async (stuff) => {
 	const sizeParam = stuff.url.searchParams.get('size');
 	const formatParam = stuff.url.searchParams.get('format');
 	const marginParam = stuff.url.searchParams.get('margin');
-	const transparentParam = stuff.url.searchParams.get('transparent') === 'true';
+	const foregroundColorParam = stuff.url.searchParams.get('foreground');
+	const backgroundColorParam = stuff.url.searchParams.get('background');
 
 	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
 
@@ -56,7 +57,8 @@ export const GET: RequestHandler = async (stuff) => {
 				type: formatParam as 'svg' | 'terminal',
 				margin: marginParam ? parseInt(marginParam) : undefined,
 				color: {
-					light: transparentParam ? '#0000' : '#fff',
+					light: backgroundColorParam ? `#${backgroundColorParam}` : '#fff',
+					dark: foregroundColorParam ? `#${foregroundColorParam}` : '#000',
 				},
 			});
 			return {
@@ -94,7 +96,8 @@ export const GET: RequestHandler = async (stuff) => {
 			type: 'svg',
 			margin: marginParam ? parseInt(marginParam) : undefined,
 			color: {
-				light: transparentParam ? '#0000' : '#fff',
+				light: backgroundColorParam ? `#${backgroundColorParam}` : '#fff',
+				dark: foregroundColorParam ? `#${foregroundColorParam}` : '#000',
 			},
 		});
 		const sharpProcessed = sharp(Buffer.from(svgData)).resize(
