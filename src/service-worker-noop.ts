@@ -1,5 +1,4 @@
 /// <reference lib="webworker" />
-
 import { build, files, version } from '$service-worker';
 
 const worker = self as unknown as ServiceWorkerGlobalScope;
@@ -47,6 +46,7 @@ async function fetchAndCache(request: Request) {
 		return response;
 	} catch (err) {
 		const response = await cache.match(request);
+
 		if (response) return response;
 
 		throw err;

@@ -9,6 +9,7 @@ export const GET: RequestHandler = async (stuff) => {
 	const marginParam = stuff.url.searchParams.get('margin');
 	const foregroundColorParam = stuff.url.searchParams.get('foreground');
 	const backgroundColorParam = stuff.url.searchParams.get('background');
+	const noDataURLParam = stuff.url.searchParams.get('noData');
 
 	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
 
@@ -66,7 +67,9 @@ export const GET: RequestHandler = async (stuff) => {
 				body: {
 					data,
 					type: formatParam,
-					asDataURL: `data:image/svg+xml;base64,${Buffer.from(data).toString('base64')}`,
+					asDataURL: `${noDataURLParam ? '' : 'data:image/svg+xml;base64,'}${Buffer.from(
+						data
+					).toString('base64')}`,
 				},
 			};
 		}
@@ -110,7 +113,7 @@ export const GET: RequestHandler = async (stuff) => {
 		return {
 			status: 200,
 			body: {
-				data: `data:image/${remappedFormat};base64,${
+				data: `${noDataURLParam ? '' : `data:image/${remappedFormat};base64,`}${
 					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 					// @ts-ignore
 					(await (sharpProcessed[remappedFormat]() as sharp.Sharp).toBuffer()).toString('base64')

@@ -1,6 +1,6 @@
 <a
 	href="https://github.com/MajesticString/qrcode-generator"
-	class="absolute top-6 right-6 text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+	class="my-2 text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
 	target="_blank"
 >
 	<span class="sr-only">This page on GitHub</span>
