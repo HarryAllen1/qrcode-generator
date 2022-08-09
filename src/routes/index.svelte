@@ -78,7 +78,7 @@
 			// @ts-ignore
 			new iro.ColorPicker(foregroundPickerEl, {
 				color: '#000',
-				width: 300,
+				width: 275,
 				borderWidth: 2,
 				wheelLightness: false,
 			});
@@ -93,7 +93,7 @@
 			// @ts-ignore
 			new iro.ColorPicker(backgroundPickerEl, {
 				color: '#fff',
-				width: 300,
+				width: 275,
 				borderWidth: 2,
 				wheelLightness: false,
 			});
