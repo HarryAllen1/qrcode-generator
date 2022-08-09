@@ -9,9 +9,6 @@
 		ListboxButton,
 		ListboxOption,
 		ListboxOptions,
-		Popover,
-		PopoverButton,
-		PopoverPanel,
 		Switch,
 		SwitchGroup,
 		SwitchLabel,
@@ -19,25 +16,11 @@
 	} from '@rgossiaux/svelte-headlessui';
 	import { classNames } from '../lib/class-names';
 	import iro from '@jaames/iro';
-	import ChevronDown from '../lib/icons/ChevronDown.svelte';
+	import { onMount } from 'svelte';
 
-	$: url = 'https://google.com/';
+	$: rawData = new Response();
 
-	let message = '';
-
-	let data: Promise<{
-		data: string;
-		type: string;
-		asDataURL: string;
-		status: number;
-		message: string;
-	}> = fetch($page.url.origin + '/generateQrcode?format=webp&text=' + encodeURIComponent(url))
-		.then(async (res) => {
-			message = '';
-			return await res.json();
-		})
-		.catch((e) => (message = e.toString())) as any;
-
+	// array of objects for future use and also to easier copy paste from example
 	const format = [
 		{ format: 'png' },
 		{ format: 'jpg' },
@@ -45,44 +28,96 @@
 		{ format: 'avif' },
 		{ format: 'gif' },
 		{ format: 'svg' },
-		{ format: 'tiff' },
 	];
 
+	$: url = `https://generate-qr.codes/`;
 	$: selectedFormat = format[0];
 	$: margin = 4;
 	$: resolution = 1080;
 	$: transparentBackground = false;
-	let transparentSliderDisabled = false;
+	$: foregroundColor = '#000000';
+	$: backgroundColor = '#ffffff';
 
 	$: if (selectedFormat.format === 'jpg') {
-		transparentBackground = false;
-		transparentSliderDisabled = true;
+		backgroundColor = '#000';
 	}
+
+	let message: string;
 
 	$: data = fetch(
 		$page.url.origin +
 			`/generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
 				resolution || 1080
-			}&transparent=${transparentBackground}&text=` +
-			encodeURIComponent(url || 'https://google.com/')
-	)
-		.then(async (res) => {
-			message = '';
-			return await res.json();
-		})
-		.catch((e) => (message = e.toString())) as any;
+			}&foreground=${foregroundColor.substring(1)}&background=${backgroundColor.substring(
+				1
+			)}&text=` +
+			encodeURIComponent(url || 'https://generate-qr.codes/')
+	).then(async (res) => {
+		rawData = res;
+		return await res.json();
+	});
+
+	$: if (rawData.status !== 200) {
+		data.then((d) => {
+			message = d.message;
+		});
+	}
+
+	let foregroundPickerEl: HTMLDivElement;
+	let foregroundIroColorPicker: iro.ColorPicker;
+
+	let backgroundPickerEl: HTMLDivElement;
+	let backgroundIroColorPicker: iro.ColorPicker;
+
+	onMount(() => {
+		foregroundIroColorPicker =
+			// @ts-ignore
+			new iro.ColorPicker(foregroundPickerEl, {
+				color: '#000',
+				width: 275,
+				borderWidth: 2,
+				wheelLightness: false,
+			});
+
+		foregroundColor = foregroundIroColorPicker.color.hexString;
+
+		foregroundIroColorPicker.on('color:change', (color: iro.Color) => {
+			foregroundColor = color.hexString;
+		});
+
+		backgroundIroColorPicker =
+			// @ts-ignore
+			new iro.ColorPicker(backgroundPickerEl, {
+				color: '#fff',
+				width: 275,
+				borderWidth: 2,
+				wheelLightness: false,
+			});
+
+		backgroundColor = backgroundIroColorPicker.color.hexString;
+
+		backgroundIroColorPicker.on('color:change', (color: iro.Color) => {
+			backgroundColor = color.hexString;
+		});
+	});
+	$: if (foregroundIroColorPicker) {
+		foregroundIroColorPicker.color.hexString = foregroundColor;
+	}
 </script>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
-<GithubIcon />
 <DarkModeSwitch />
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div>
 		{#await data}
 			<img class="w-96 pixelated shadow-md" src="/placeholder.png" alt="placeholder" />
 		{:then image}
-			{#if image.status === 400 || image.status === 500}
-				<p class="w-96">{image.message}</p>
+			{#if message}
+				<p
+					class="text-black bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
+				>
+					{message}
+				</p>
 			{:else}
 				<img
 					class="w-96 pixelated shadow-md"
@@ -113,7 +148,7 @@
 			<Listbox value={selectedFormat} on:change={(e) => (selectedFormat = e.detail)}>
 				<div class="relative mt-1">
 					<ListboxButton
-						class="relative w-full py-2 pl-3 pr-10 text-left bg-white dark:bg-slate-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+						class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-slate-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
 					>
 						<span class="block truncate">{selectedFormat.format}</span>
 						<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -133,13 +168,13 @@
 									class={({ active }) =>
 										`cursor-default select-none relative py-2 pl-10 pr-4 ${
 											active
-												? 'text-blue-900 bg-blue-100 dark:bg-blue-300'
+												? 'text-blue-900 dark:text-blue-300 bg-blue-100 dark:bg-blue-900'
 												: 'text-black dark:text-white'
 										}`}
 									value={person}
 									let:selected
 								>
-									<span class={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+									<span class={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
 										{person.format}
 									</span>
 									{#if selected}
@@ -170,14 +205,21 @@
 		/>
 		<details>
 			<summary>Colors</summary>
+
+			<p class="mb-0">Foreground Color</p>
+			<div class="mb-4" bind:this={foregroundPickerEl} />
+
+			<p class="mb-0">Background Color</p>
+			<div class="mb-4" bind:this={backgroundPickerEl} />
+
 			<div class="flex items-start mb-4">
 				<SwitchGroup as="div" class="flex items-center space-x-4">
 					<SwitchLabel class="text-black dark:text-white">Transparent Background</SwitchLabel>
 					<Switch
-						disabled={transparentSliderDisabled}
 						as="button"
 						checked={transparentBackground}
 						on:change={(event) => {
+							backgroundColor = event.detail ? '#0000' : '#fff';
 							transparentBackground = event.detail;
 						}}
 						class={({ checked }) =>
@@ -185,21 +227,39 @@
 								'relative inline-flex flex-shrink-0 h-6 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:shadow-outline transition-colors ease-in-out duration-200',
 								checked ? 'bg-blue-600' : 'bg-gray-400'
 							)}
-						let:checked
 					>
 						<span
 							class={classNames(
 								'inline-block w-5 h-5 bg-white rounded-full transform transition ease-in-out duration-200',
-								checked ? 'translate-x-5' : 'translate-x-0'
+								transparentBackground ? 'translate-x-5' : 'translate-x-0'
 							)}
 						/>
 					</Switch>
 				</SwitchGroup>
 			</div>
+			{#if selectedFormat.format === 'jpg' && transparentBackground}
+				<p class="w-72 text-gray-500 dark:text-gray-400 flex flex-row">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						aria-hidden="true"
+						height="26"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					JPGs don't support transparent backgrounds, making the background black.
+				</p>
+			{/if}
 		</details>
 	</div>
 </div>
-<h6><a href="/api" class="dark:text-gray-400">QR Code API</a></h6>
+<h6><a href="/api" class="text-slate-400 dark:text-gray-400">QR Code API</a></h6>
+<GithubIcon />
 
 <style lang="scss">
 	.pixelated {

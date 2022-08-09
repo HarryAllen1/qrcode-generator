@@ -17,6 +17,10 @@
 <h1>QRCode API</h1>
 <GithubIcon />
 <DarkModeSwitch />
+<h2 class="text-red-500">
+	Since the main site is still being worked on, many undocumented changes are being made. It is
+	reccomended to look at the source for this API as documentation instead.
+</h2>
 <p>This site has an API that allows developers to easily generate QR codes.</p>
 <p>Headers are not required to use the API</p>
 <p>The endpoint for this api is <code>{$page.url.origin}/generateQrcode</code></p>
