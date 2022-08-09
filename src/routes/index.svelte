@@ -71,6 +71,7 @@
 
 	onMount(() => {
 		foregroundIroColorPicker =
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			new iro.ColorPicker(foregroundPickerEl, {
 				color: '#000',
@@ -86,6 +87,7 @@
 		});
 
 		backgroundIroColorPicker =
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			new iro.ColorPicker(backgroundPickerEl, {
 				color: '#fff',
