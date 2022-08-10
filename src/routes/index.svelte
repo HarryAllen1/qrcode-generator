@@ -220,10 +220,10 @@
 		<details>
 			<summary>Colors</summary>
 
-			<p class="mb-0">Foreground Color</p>
+			<p class="mb-2">Foreground Color</p>
 			<div class="mb-4" bind:this={foregroundPickerEl} />
 
-			<p class="mb-0">Background Color</p>
+			<p class="mb-2">Background Color</p>
 			<div class="mb-4" bind:this={backgroundPickerEl} />
 
 			<div class="flex items-start mb-4">
