@@ -2,14 +2,14 @@ import QRCode from 'qrcode';
 import sharp from 'sharp';
 import type { RequestHandler } from './__types/qrcode';
 
-export const GET: RequestHandler = async (stuff) => {
-	const textParam = stuff.url.searchParams.get('text');
-	const sizeParam = stuff.url.searchParams.get('size');
-	const formatParam = stuff.url.searchParams.get('format');
-	const marginParam = stuff.url.searchParams.get('margin');
-	const foregroundColorParam = stuff.url.searchParams.get('foreground');
-	const backgroundColorParam = stuff.url.searchParams.get('background');
-	const noDataURLParam = stuff.url.searchParams.get('noData');
+export const GET: RequestHandler = async ({ url }) => {
+	const textParam = url.searchParams.get('text');
+	const sizeParam = url.searchParams.get('size');
+	const formatParam = url.searchParams.get('format');
+	const marginParam = url.searchParams.get('margin');
+	const foregroundColorParam = url.searchParams.get('foreground');
+	const backgroundColorParam = url.searchParams.get('background');
+	const noDataURLParam = url.searchParams.get('noData');
 
 	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
 
