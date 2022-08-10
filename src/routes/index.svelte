@@ -17,6 +17,8 @@
 	import { classNames } from '../lib/class-names';
 	import iro from '@jaames/iro';
 	import { onMount } from 'svelte';
+	import { downloadURI } from '../lib/download';
+	import ActionButtons from '../lib/ActionButtons.svelte';
 
 	$: rawData = new Response();
 
@@ -110,16 +112,57 @@
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
 <DarkModeSwitch />
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
-	<div>
+	<div class="flex flex-col">
 		{#await data}
 			<img class="w-96 pixelated shadow-md" src="/placeholder.png" alt="placeholder" />
+			<div class="flex flex-row">
+				<button
+					type="button"
+					disabled
+					on:click={() => {}}
+					class="inline-flex disabled:opacity-60 disabled:saturate-0 mr-4 justify-center rounded-md border border-transparent bg-blue-200 dark:bg-blue-600 text-blue-900 dark:text-white px-4 py-2 text-sm font-medium hover:bg-blue-300 dark:hover:bg-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-2"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					Download
+				</button>
+				<button
+					type="button"
+					disabled
+					class="inline-flex disabled:opacity-60 disabled:saturate-0 mr-4 justify-center rounded-md border border-transparent bg-blue-200 dark:bg-blue-600 text-blue-900 dark:text-white px-4 py-2 text-sm font-medium hover:bg-blue-300 dark:hover:bg-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-2"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z" />
+						<path
+							d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"
+						/>
+					</svg>
+					Copy
+				</button>
+			</div>
 		{:then image}
 			{#if message}
 				<p
-					class="text-black bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
+					class="text-black mb-0 bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
 				>
 					{message}
 				</p>
+				<ActionButtons disabled />
 			{:else}
 				<img
 					class="w-96 pixelated shadow-md"
@@ -130,9 +173,18 @@
 						: image.data}
 					alt="qrcode"
 				/>
+				<ActionButtons
+					extension={image.type}
+					uri={image.type === 'svg' ? image.asDataURL : image.data}
+				/>
 			{/if}
 		{:catch e}
-			<p class="w-96">{e.message}</p>
+			<p
+				class="text-black mb-0 bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
+			>
+				{e.message}
+			</p>
+			<ActionButtons disabled />
 		{/await}
 	</div>
 	<div>
