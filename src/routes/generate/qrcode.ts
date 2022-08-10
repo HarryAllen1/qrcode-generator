@@ -1,6 +1,6 @@
 import QRCode from 'qrcode';
 import sharp from 'sharp';
-import type { RequestHandler } from './__types/generateQrcode';
+import type { RequestHandler } from './__types/qrcode';
 
 export const GET: RequestHandler = async (stuff) => {
 	const textParam = stuff.url.searchParams.get('text');

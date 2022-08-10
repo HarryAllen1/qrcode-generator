@@ -23,7 +23,7 @@
 </h2>
 <p>This site has an API that allows developers to easily generate QR codes.</p>
 <p>Headers are not required to use the API</p>
-<p>The endpoint for this api is <code>{$page.url.origin}/generateQrcode</code></p>
+<p>The endpoint for this api is <code>{$page.url.origin}/generate/qrcode</code></p>
 <p>Example response (in JSON):</p>
 <CodeBlock input={exampleResponse} />
 

@@ -45,13 +45,12 @@
 
 	let message: string;
 
+	const API_ROOT = `/generate/qrcode`;
+
 	$: data = fetch(
-		$page.url.origin +
-			`/generateQrcode?format=${selectedFormat.format}&margin=${margin || 4}&size=${
-				resolution || 1080
-			}&foreground=${foregroundColor.substring(1)}&background=${backgroundColor.substring(
-				1
-			)}&text=` +
+		`${API_ROOT}?format=${selectedFormat.format}&margin=${margin || 4}&size=${
+			resolution || 1080
+		}&foreground=${foregroundColor.substring(1)}&background=${backgroundColor.substring(1)}&text=` +
 			encodeURIComponent(url || 'https://generate-qr.codes/')
 	).then(async (res) => {
 		rawData = res;
