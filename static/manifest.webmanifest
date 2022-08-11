@@ -5,6 +5,7 @@
 	"start_url": "/",
 	"theme_color": "#2563eb",
 	"description": "An ultra-customizable QR code generator",
+	"display": "standalone",
 	"icons": [
 		{
 			"src": "icons/dual-tone-192.png",
