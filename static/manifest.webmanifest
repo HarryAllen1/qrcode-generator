@@ -4,12 +4,17 @@
 	"short_name": "QRCode Gen",
 	"start_url": "/",
 	"theme_color": "#2563eb",
-	"description": "A no bs QR code generator",
+	"description": "An ultra-customizable QR code generator",
 	"icons": [
 		{
-			"src": "./favicon.png",
-			"type": "image/png",
-			"sizes": "512x512"
+			"src": "static/icons/dual-tone-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "static/icons/dual-tone-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
 		}
 	]
 }

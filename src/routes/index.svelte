@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 	import GithubIcon from '$lib/GithubIcon.svelte';
 	import CheckIcon from '$lib/icons/Check.svelte';
@@ -31,6 +30,13 @@
 		{ format: 'svg' },
 	];
 
+	const errorCorrectionLevel = [
+		{ name: 'Low', value: 'L' },
+		{ name: 'Medium', value: 'M' },
+		{ name: 'Quartile', value: 'Q' },
+		{ name: 'High', value: 'H' },
+	];
+
 	$: url = `https://generate-qr.codes/`;
 	$: selectedFormat = format[0];
 	$: margin = 4;
@@ -38,20 +44,22 @@
 	$: transparentBackground = false;
 	$: foregroundColor = '#000000';
 	$: backgroundColor = '#ffffff';
-
-	$: if (selectedFormat.format === 'jpg') {
-		backgroundColor = '#000';
-	}
+	$: selectedErrorCorrectionLevel = errorCorrectionLevel[1];
 
 	let message: string;
 
 	const API_ROOT = `/api/qrcode`;
 
 	$: data = fetch(
-		`${API_ROOT}?format=${selectedFormat.format}&margin=${margin || 4}&size=${
-			resolution || 1080
-		}&foreground=${foregroundColor.substring(1)}&background=${backgroundColor.substring(1)}&text=` +
-			encodeURIComponent(url || 'https://generate-qr.codes/')
+		`${API_ROOT}?${new URLSearchParams({
+			format: selectedFormat.format,
+			margin: (margin || 4).toString(),
+			size: (resolution || 1080).toString(),
+			foreground: foregroundColor.substring(1),
+			background: backgroundColor.substring(1),
+			text: encodeURIComponent(url || 'https://generate-qr.codes/'),
+			errorCorrection: selectedErrorCorrectionLevel.value ?? 'M',
+		}).toString()}`
 	).then(async (res) => {
 		rawData = res;
 		return await res.json();
@@ -268,6 +276,59 @@
 					JPGs don't support transparent backgrounds, making the background black.
 				</p>
 			{/if}
+		</details>
+		<details>
+			<summary> Advanced </summary>
+
+			<p class="mb-1">Error Correction Level</p>
+			<div class="mb-6 relative">
+				<Listbox
+					value={selectedErrorCorrectionLevel}
+					on:change={(e) => (selectedErrorCorrectionLevel = e.detail)}
+				>
+					<div class="relative mt-1">
+						<ListboxButton
+							class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-slate-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+						>
+							<span class="block truncate">{selectedErrorCorrectionLevel.name}</span>
+							<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+								<SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+							</span>
+						</ListboxButton>
+						<Transition
+							leave="transition ease-in duration-100"
+							leaveFrom="opacity-100"
+							leaveTo="opacity-0"
+						>
+							<ListboxOptions
+								class="absolute w-full marker:!hidden pl-0 py-1 mt-1 overflow-auto text-base max-h-60 sm:text-sm rounded-lg border text-black dark:text-white border-white border-opacity-10 bg-white dark:bg-gray-900 bg-opacity-80 p-1 backdrop-blur backdrop-filter focus-visible:outline-none focus-visible:ring"
+							>
+								{#each errorCorrectionLevel as person, personIdx (personIdx)}
+									<ListboxOption
+										class={({ active }) =>
+											`cursor-default select-none relative py-2 pl-10 pr-4 ${
+												active
+													? 'text-blue-900 dark:text-blue-300 bg-blue-100 dark:bg-blue-900'
+													: 'text-black dark:text-white'
+											}`}
+										value={person}
+										let:selected
+									>
+										<span class={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
+											{person.name}
+										</span>
+										{#if selected}
+											<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500">
+												<CheckIcon class="w-5 h-5" aria-hidden="true" />
+											</span>
+										{/if}
+									</ListboxOption>
+								{/each}
+							</ListboxOptions>
+						</Transition>
+					</div>
+				</Listbox>
+			</div>
 		</details>
 	</div>
 </div>
