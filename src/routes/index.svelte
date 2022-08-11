@@ -332,7 +332,7 @@
 		</details>
 	</div>
 </div>
-<h6><a href="/api" class="text-slate-400 dark:text-gray-400">QR Code API</a></h6>
+<p class="prose-sm"><a href="/api" class="text-slate-400 dark:text-gray-400">QR Code API</a></p>
 <GithubIcon />
 
 <style lang="scss">
