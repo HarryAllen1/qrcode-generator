@@ -167,11 +167,11 @@
 			class="input dark:bg-gray-800 dark:text-slate-300"
 		/>
 		<p class="mb-1">Image Format</p>
-		<div class="mb-6 relative">
+		<div class="mb-6 w-72 relative">
 			<Listbox value={selectedFormat} on:change={(e) => (selectedFormat = e.detail)}>
 				<div class="relative mt-1">
 					<ListboxButton
-						class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-slate-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+						class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
 					>
 						<span class="block truncate">{selectedFormat.format}</span>
 						<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -283,14 +283,14 @@
 			<summary> Advanced </summary>
 
 			<p class="mb-1">Error Correction Level</p>
-			<div class="mb-6 relative">
+			<div class="mb-6 w-72 relative">
 				<Listbox
 					value={selectedErrorCorrectionLevel}
 					on:change={(e) => (selectedErrorCorrectionLevel = e.detail)}
 				>
 					<div class="relative mt-1">
 						<ListboxButton
-							class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-slate-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+							class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
 						>
 							<span class="block truncate">{selectedErrorCorrectionLevel.name}</span>
 							<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
