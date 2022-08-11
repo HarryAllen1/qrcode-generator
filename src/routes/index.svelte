@@ -133,6 +133,8 @@
 			{:else}
 				<img
 					class="w-96 pixelated shadow-md"
+					width="384"
+					height="384"
 					src={!image.data
 						? '/placeholder.png'
 						: image.type === 'svg'
