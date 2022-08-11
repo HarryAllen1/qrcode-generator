@@ -1,4 +1,4 @@
-import QRCode from 'qrcode';
+import QRCode, { type QRCodeErrorCorrectionLevel } from 'qrcode';
 import sharp from 'sharp';
 import type { RequestHandler } from './__types/qrcode';
 
@@ -14,7 +14,10 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
 
-	if (errorCorrectionParam && !['L', 'M', 'Q', 'H'].includes(errorCorrectionParam))
+	if (
+		errorCorrectionParam &&
+		!['L', 'M', 'Q', 'H', 'low', 'medium', 'quartile', 'high'].includes(errorCorrectionParam)
+	)
 		return {
 			status: 400,
 			body: {
@@ -68,6 +71,7 @@ export const GET: RequestHandler = async ({ url }) => {
 			const data = await QRCode.toString(url, {
 				type: formatParam as 'svg' | 'terminal',
 				margin: marginParam ? parseInt(marginParam) : undefined,
+				errorCorrectionLevel: (errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
 				color: {
 					light: backgroundColorParam ? `#${backgroundColorParam}` : '#fff',
 					dark: foregroundColorParam ? `#${foregroundColorParam}` : '#000',
@@ -90,6 +94,7 @@ export const GET: RequestHandler = async ({ url }) => {
 				body: {
 					data: await QRCode.toString(url, {
 						type: formatParam as 'svg' | 'terminal',
+						errorCorrectionLevel: (errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
 						margin: marginParam ? parseInt(marginParam) : undefined,
 					}),
 					type: formatParam,
@@ -109,15 +114,14 @@ export const GET: RequestHandler = async ({ url }) => {
 		const svgData = await QRCode.toString(url, {
 			type: 'svg',
 			margin: marginParam ? parseInt(marginParam) : undefined,
+			errorCorrectionLevel: (errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
+			width: parseInt(sizeParam ?? '1080'),
 			color: {
 				light: backgroundColorParam ? `#${backgroundColorParam}` : '#fff',
 				dark: foregroundColorParam ? `#${foregroundColorParam}` : '#000',
 			},
 		});
-		const sharpProcessed = sharp(Buffer.from(svgData)).resize(
-			parseInt(sizeParam ?? '1080'),
-			parseInt(sizeParam ?? '1080')
-		);
+		const sharpProcessed = sharp(Buffer.from(svgData));
 
 		const remappedFormat = formatParam === 'jpg' ? 'jpeg' : formatParam;
 
