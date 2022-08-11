@@ -17,6 +17,7 @@
 	import iro from '@jaames/iro';
 	import { onMount } from 'svelte';
 	import ActionButtons from '../lib/ActionButtons.svelte';
+	import { API_ROOT } from '../lib/constants';
 
 	$: rawData = new Response();
 
@@ -48,8 +49,7 @@
 
 	let message: string;
 
-	const API_ROOT = `/api/qrcode`;
-
+	export let data: Promise<any>;
 	$: data = fetch(
 		`${API_ROOT}?${new URLSearchParams({
 			format: selectedFormat.format,
