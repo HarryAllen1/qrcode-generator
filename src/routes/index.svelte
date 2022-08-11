@@ -120,7 +120,13 @@
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div class="flex flex-col">
 		{#await data}
-			<img class="w-96 pixelated shadow-md" src="/placeholder.png" alt="placeholder" />
+			<img
+				class="w-96 pixelated shadow-md"
+				src="/placeholder.png"
+				alt="placeholder"
+				width="384"
+				height="384"
+			/>
 			<ActionButtons disabled />
 		{:then image}
 			{#if message}
