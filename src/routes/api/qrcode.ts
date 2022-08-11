@@ -10,8 +10,19 @@ export const GET: RequestHandler = async ({ url }) => {
 	const foregroundColorParam = url.searchParams.get('foreground');
 	const backgroundColorParam = url.searchParams.get('background');
 	const noDataURLParam = url.searchParams.get('noData');
+	const errorCorrectionParam = url.searchParams.get('errorCorrection');
 
 	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
+
+	if (errorCorrectionParam && !['L', 'M', 'Q', 'H'].includes(errorCorrectionParam))
+		return {
+			status: 400,
+			body: {
+				code: 400,
+				message:
+					'Invalid error correction level. Error collection level must be one of L, M, Q, H.',
+			},
+		};
 
 	if (!textParam)
 		return {

@@ -45,7 +45,7 @@
 
 	let message: string;
 
-	const API_ROOT = `/generate/qrcode`;
+	const API_ROOT = `/api/qrcode`;
 
 	$: data = fetch(
 		`${API_ROOT}?format=${selectedFormat.format}&margin=${margin || 4}&size=${
