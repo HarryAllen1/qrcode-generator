@@ -153,7 +153,6 @@
 					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 				) {
 					document.documentElement.classList.add('dark');
-					document.head.querySelector('[rel=icon]').href = '/favicon-dark.png';
 				} else {
 					document.documentElement.classList.remove('dark');
 				}
