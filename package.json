@@ -13,7 +13,7 @@
 		"test": "playwright test"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.25.0",
+		"@playwright/test": "1.25.0",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "0.5.4",
@@ -40,7 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@jaames/iro": "5.5.2",
-		"@napi-rs/canvas": "^0.1.26",
+		"@napi-rs/canvas": "0.1.26",
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"qrcode": "1.5.1",
 		"sharp": "0.30.7",
