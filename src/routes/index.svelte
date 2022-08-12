@@ -1,7 +1,6 @@
 <script lang="ts">
 	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 	import GithubIcon from '$lib/GithubIcon.svelte';
-	import CheckIcon from '$lib/icons/Check.svelte';
 	import SelectorIcon from '$lib/icons/Selector.svelte';
 	import {
 		Listbox,
@@ -13,11 +12,13 @@
 		SwitchLabel,
 		Transition,
 	} from '@rgossiaux/svelte-headlessui';
-	import { classNames } from '../lib/class-names';
+	import { classNames } from '$lib/class-names';
 	import iro from '@jaames/iro';
 	import { onMount } from 'svelte';
-	import ActionButtons from '../lib/ActionButtons.svelte';
-	import { API_ROOT } from '../lib/constants';
+	import ActionButtons from '$lib/ActionButtons.svelte';
+	import { API_ROOT } from '$lib/constants';
+	import Dialog from '$lib/Dialog.svelte';
+	import { openModal } from '$lib/open-modal';
 
 	$: rawData = new Response();
 
@@ -164,7 +165,25 @@
 	</div>
 	<div>
 		<h2 class="mt-2">Options</h2>
-		<p class="mb-1">Text/URL</p>
+		<p class="mb-1">
+			Text/URL <button class="text-gray-500" on:click={() => ($openModal = 'text')}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			</button>
+			<Dialog open={$openModal === 'text'} title="Text/URL">
+				This is the info that makes up the QR code. Doesn't have to be a URL.
+			</Dialog>
+		</p>
 		<input
 			bind:value={url}
 			type="text"
@@ -172,7 +191,59 @@
 			placeholder="URL"
 			class="input dark:bg-gray-800 dark:text-slate-300"
 		/>
-		<p class="mb-1">Image Format</p>
+
+		<p class="mb-1">
+			Image Format <button class="text-gray-500" on:click={() => ($openModal = 'format')}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+			</button>
+			<Dialog open={$openModal === 'format'} title="Image Format">
+				<ul>
+					<li>
+						PNG <ul><li>Good for basically anything</li></ul>
+					</li>
+					<li>
+						JPG <ul><li>Better for printing</li></ul>
+					</li>
+					<li>
+						WEBP <ul><li>Great for websites, but lacks compatibility with other programs.</li></ul>
+					</li>
+					<li>
+						AVIF <ul>
+							<li>
+								Best for websites (lowest image size), but lacks even more compatibility with other
+								programs and browsers. Also takes longer to generate.
+							</li>
+						</ul>
+					</li>
+					<li>
+						GIF
+						<ul>
+							<li>Good for animations. Except QR codes don't animate.</li>
+						</ul>
+					</li>
+					<li>
+						SVG
+						<ul>
+							<li>
+								Provides the highest quality, but only works in very certain scenarios. Great for
+								editing vector graphics and posters.
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</Dialog>
+		</p>
 		<div class="mb-6 w-72 relative">
 			<Listbox value={selectedFormat} on:change={(e) => (selectedFormat = e.detail)}>
 				<div class="relative mt-1">
@@ -208,7 +279,19 @@
 									</span>
 									{#if selected}
 										<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500">
-											<CheckIcon class="w-5 h-5" aria-hidden="true" />
+											<svg
+												class="w-5 h-5"
+												xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+												aria-hidden="true"
+											>
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
 										</span>
 									{/if}
 								</ListboxOption>
@@ -327,7 +410,19 @@
 										</span>
 										{#if selected}
 											<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500">
-												<CheckIcon class="w-5 h-5" aria-hidden="true" />
+												<svg
+													class="w-5 h-5"
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													fill="currentColor"
+													aria-hidden="true"
+												>
+													<path
+														fill-rule="evenodd"
+														d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+														clip-rule="evenodd"
+													/>
+												</svg>
 											</span>
 										{/if}
 									</ListboxOption>
