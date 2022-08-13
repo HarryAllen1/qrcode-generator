@@ -5,7 +5,7 @@ dependencies:
     specifier: 5.5.2
     version: 5.5.2
   '@napi-rs/canvas':
-    specifier: ^0.1.26
+    specifier: 0.1.26
     version: 0.1.26
   '@rgossiaux/svelte-headlessui':
     specifier: 1.0.2
@@ -22,7 +22,7 @@ dependencies:
 
 devDependencies:
   '@playwright/test':
-    specifier: ^1.25.0
+    specifier: 1.25.0
     version: 1.25.0
   '@sveltejs/adapter-vercel':
     specifier: next
