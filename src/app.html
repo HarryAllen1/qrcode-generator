@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full p-0">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -156,9 +156,15 @@
 				}
 			} catch (_) {}
 		</script>
+		<style>
+			/* fixes weird dialog glitch */
+			html {
+				padding-right: 0 !important;
+			}
+		</style>
 		%sveltekit.head%
 	</head>
-	<body class="bg-gray-200 dark:bg-slate-900 md:overflow-y-scroll h-full">
+	<body class="bg-gray-200 dark:bg-slate-900 w-full md:overflow-y-scroll h-full">
 		<p class="sr-only">An ultra-customizable QR code generator</p>
 		<div
 			class="prose w-full flex flex-col items-center max-w-full p-4 overflow-x-hidden text-black dark:text-white"
