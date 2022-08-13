@@ -17,8 +17,8 @@ dependencies:
     specifier: 0.30.7
     version: 0.30.7
   shiki:
-    specifier: 0.11.0
-    version: 0.11.0
+    specifier: 0.11.1
+    version: 0.11.1
 
 devDependencies:
   '@playwright/test':
@@ -2314,8 +2314,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki/0.11.0:
-    resolution: {integrity: sha512-ZM5xcTzsURBxNcqTcB5Z2EpgyWGiHpcXewrq8FDftca9w5jKw5rS5BMo76h1UpYVQOQ6PYssIPpSYv+zf7wVYg==}
+  /shiki/0.11.1:
+    resolution: {integrity: sha512-EugY9VASFuDqOexOgXR18ZV+TbFrQHeCpEYaXamO+SZlsnT/2LxuLBX25GGtIrwaEVFXUAbUQ601SWE2rMwWHA==}
     dependencies:
       jsonc-parser: 3.1.0
       vscode-oniguruma: 1.6.2
