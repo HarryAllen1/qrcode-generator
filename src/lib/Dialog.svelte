@@ -1,3 +1,9 @@
+<script context="module" lang="ts">
+	import { writable } from 'svelte/store';
+
+	export const openModal = writable('');
+</script>
+
 <script lang="ts">
 	import {
 		Transition,
@@ -6,16 +12,14 @@
 		DialogTitle,
 		DialogOverlay,
 	} from '@rgossiaux/svelte-headlessui';
-	import { openModal } from './open-modal';
 
 	export let title: string;
-
 	export let open = false;
 
-	function closeModal() {
+	export const closeModal = () => {
 		open = false;
 		$openModal = '';
-	}
+	};
 </script>
 
 <Transition appear show={open}>

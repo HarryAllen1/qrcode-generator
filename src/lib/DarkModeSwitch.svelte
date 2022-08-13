@@ -1,7 +1,12 @@
+<script context="module" lang="ts">
+	import { writable } from 'svelte/store';
+
+	export const state = writable(false);
+</script>
+
 <script lang="ts">
 	import { Switch, SwitchGroup, SwitchLabel } from '@rgossiaux/svelte-headlessui';
 	import { onMount } from 'svelte';
-	import { state } from './dark-mode';
 
 	function classNames(...classes: (string | false | null | undefined)[]) {
 		return classes.filter(Boolean).join(' ');

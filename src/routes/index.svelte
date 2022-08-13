@@ -17,8 +17,7 @@
 	import { onMount } from 'svelte';
 	import ActionButtons from '$lib/ActionButtons.svelte';
 	import { API_ROOT } from '$lib/constants';
-	import Dialog from '$lib/Dialog.svelte';
-	import { openModal } from '$lib/open-modal';
+	import Dialog, { openModal } from '$lib/Dialog.svelte';
 
 	$: rawData = new Response();
 
