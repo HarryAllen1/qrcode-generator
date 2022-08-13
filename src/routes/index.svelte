@@ -49,6 +49,7 @@
 
 	let message: string;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	export let data: Promise<any>;
 	$: data = fetch(
 		`${API_ROOT}?${new URLSearchParams({

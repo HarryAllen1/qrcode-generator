@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getHighlighter, setCDN, type Theme } from 'shiki';
-	import { state } from './dark-mode';
+	import { state } from './DarkModeSwitch.svelte';
 
 	setCDN('https://unpkg.com/shiki/');
 
