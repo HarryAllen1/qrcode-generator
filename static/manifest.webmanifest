@@ -3,7 +3,6 @@
 	"name": "QR Code Generator",
 	"short_name": "QRCode Gen",
 	"start_url": "/",
-	"theme_color": "#2563eb",
 	"background_color": "#0f172a",
 	"description": "An ultra-customizable QR code generator",
 	"display": "standalone",
