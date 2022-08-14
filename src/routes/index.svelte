@@ -18,8 +18,11 @@
 	import ActionButtons from '$lib/ActionButtons.svelte';
 	import { API_ROOT } from '$lib/constants';
 	import Dialog, { openModal } from '$lib/Dialog.svelte';
+	import { selfQr } from '../lib/selfQrData';
 
 	$: rawData = new Response();
+
+	let oldImage = selfQr;
 
 	// array of objects for future use and also to easier copy paste from example
 	const format = [
@@ -123,7 +126,7 @@
 		{#await data}
 			<img
 				class="w-96 pixelated shadow-md"
-				src="/placeholder.png"
+				src={oldImage}
 				alt="placeholder"
 				width="384"
 				height="384"
@@ -148,6 +151,13 @@
 						? image.asDataURL
 						: image.data}
 					alt="qrcode"
+					on:load={() => {
+						oldImage = !image.data
+							? '/placeholder.png'
+							: image.type === 'svg'
+							? image.asDataURL
+							: image.data;
+					}}
 				/>
 				<ActionButtons
 					extension={image.type}
