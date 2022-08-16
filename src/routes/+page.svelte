@@ -18,7 +18,7 @@
 	import ActionButtons from '$lib/ActionButtons.svelte';
 	import { API_ROOT } from '$lib/constants';
 	import Dialog, { openModal } from '$lib/Dialog.svelte';
-	import { selfQr } from '../lib/selfQrData';
+	import { selfQr } from '$lib/selfQrData';
 
 	$: rawData = new Response();
 
@@ -53,8 +53,9 @@
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	export let data: Promise<any>;
-	$: data = fetch(
-		`${API_ROOT}?${new URLSearchParams({
+	$: data = fetch(`${API_ROOT}`, {
+		method: 'POST',
+		body: JSON.stringify({
 			format: selectedFormat.format,
 			margin: (margin || 4).toString(),
 			size: (resolution || 1080).toString(),
@@ -62,8 +63,8 @@
 			background: backgroundColor.substring(1),
 			text: encodeURIComponent(url || 'https://generate-qr.codes/'),
 			errorCorrection: selectedErrorCorrectionLevel.value ?? 'M',
-		}).toString()}`
-	).then(async (res) => {
+		}),
+	}).then(async (res) => {
 		rawData = res;
 		return await res.json();
 	});
@@ -134,7 +135,7 @@
 		{:then image}
 			{#if message}
 				<p
-					class="text-black mb-0 bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
+					class="text-black my-8 bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
 				>
 					{message}
 				</p>
@@ -165,7 +166,7 @@
 			{/if}
 		{:catch e}
 			<p
-				class="text-black mb-0 bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
+				class="text-black my-8 bg-white text-4xl font-bold w-96 h-96 flex text-center justify-center items-center"
 			>
 				{e.message}
 			</p>
