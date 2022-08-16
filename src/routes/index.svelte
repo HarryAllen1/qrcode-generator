@@ -29,7 +29,6 @@
 		{ format: 'png' },
 		{ format: 'jpg' },
 		{ format: 'webp' },
-		{ format: 'avif' },
 		{ format: 'gif' },
 		{ format: 'svg' },
 	];
@@ -175,6 +174,7 @@
 	</div>
 	<div>
 		<h2 class="mt-2">Options</h2>
+
 		<p class="mb-1">
 			Text/URL <button class="text-gray-500" on:click={() => ($openModal = 'text')}>
 				<svg
@@ -231,8 +231,7 @@
 					<li>
 						AVIF <ul>
 							<li>
-								Best for websites (lowest image size), but lacks even more compatibility with other
-								programs and browsers. Also takes longer to generate.
+								Currently unsupported due to too slow processing, often resulting in timeouts.
 							</li>
 						</ul>
 					</li>

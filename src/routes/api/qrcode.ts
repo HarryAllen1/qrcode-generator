@@ -12,7 +12,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const noDataURLParam = url.searchParams.get('noData');
 	const errorCorrectionParam = url.searchParams.get('errorCorrection');
 
-	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif', 'gif', 'terminal'];
+	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'gif', 'terminal'];
 
 	if (
 		errorCorrectionParam &&
