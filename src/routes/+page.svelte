@@ -514,8 +514,4 @@
 	::marker {
 		display: none;
 	}
-
-	:global(input.input) {
-		@apply flex items-center w-72 mb-4 shadow-md text-left space-x-3 px-4 h-12 bg-white focus:outline-none focus:ring-2 rounded-lg text-black dark:ring-0;
-	}
 </style>
