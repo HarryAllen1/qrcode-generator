@@ -29,7 +29,7 @@ devDependencies:
     version: 1.0.0-next.66
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.408_svelte@3.49.0+vite@3.0.7
+    version: 1.0.0-next.417_svelte@3.49.0+vite@3.0.7
   '@tailwindcss/typography':
     specifier: 0.5.4
     version: 0.5.4_tailwindcss@3.1.8
@@ -73,14 +73,14 @@ devDependencies:
     specifier: 3.49.0
     version: 3.49.0
   svelte-check:
-    specifier: 2.8.0
-    version: 2.8.0_wfbwvhujpq55dwnmdsqpqghtky
+    specifier: 2.8.1
+    version: 2.8.1_wfbwvhujpq55dwnmdsqpqghtky
   svelte-preprocess:
     specifier: 4.10.7
     version: 4.10.7_v47vl5ncx4rolutzzqi3rog55m
   tailwindcss:
     specifier: 3.1.8
-    version: 3.1.8
+    version: 3.1.8_postcss@8.4.16
   tslib:
     specifier: 2.4.0
     version: 2.4.0
@@ -339,8 +339,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.408_svelte@3.49.0+vite@3.0.7:
-    resolution: {integrity: sha512-AOSa0o7EJnFN56IptIMGvcbLNPlGdFKtzq0RYnYnzJAvtAocWrNdAL26gIFj2f6iYdBDRR6mm/a8X1yCQ9mCdA==}
+  /@sveltejs/kit/1.0.0-next.417_svelte@3.49.0+vite@3.0.7:
+    resolution: {integrity: sha512-ejnwVq4Uz2uraASHC9eBfSEGhr9j67w01jQENyOOX5TrQPnVGmyjL3dWaTDU0x8O8XdcW3syV469me8Wjq1/pQ==}
     engines: {node: '>=16.9'}
     hasBin: true
     requiresBuild: true
@@ -399,7 +399,7 @@ packages:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.1.8
+      tailwindcss: 3.1.8_postcss@8.4.16
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -2496,8 +2496,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.8.0_wfbwvhujpq55dwnmdsqpqghtky:
-    resolution: {integrity: sha512-HRL66BxffMAZusqe5I5k26mRWQ+BobGd9Rxm3onh7ZVu0nTk8YTKJ9vu3LVPjUGLU9IX7zS+jmwPVhJYdXJ8vg==}
+  /svelte-check/2.8.1_wfbwvhujpq55dwnmdsqpqghtky:
+    resolution: {integrity: sha512-cibyY1sgt3ONIDnQbSgV2X9AJFhwEslRHNo95lijrYfPzVEvTvbmL2ohsUyqB5L7j1GhLXtQbjCJ4lZZ/fwbeQ==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
@@ -2590,10 +2590,12 @@ packages:
     resolution: {integrity: sha512-+lmjic1pApJWDfPCpUUTc1m8azDqYCG1JN9YEngrx/hUyIcFJo6VZhj0A1Ai0wqoHcEIuQy+e9tk+4uDgdtsFA==}
     engines: {node: '>= 8'}
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
