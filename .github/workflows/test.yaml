@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: node
+      - name: Install Playwright browsers
+        run: npx playwright install
       - name: Install Deps
         run: npx pnpm i
       - name: Run tests
