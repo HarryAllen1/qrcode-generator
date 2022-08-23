@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import CodeBlock from '$lib/CodeBlock.svelte';
+	import CodeBlock from './CodeBlock.svelte';
 	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 	import GithubIcon from '$lib/GithubIcon.svelte';
 
@@ -19,7 +19,7 @@
 <DarkModeSwitch />
 <h2 class="text-red-500">
 	Since the main site is still being worked on, many undocumented changes are being made. It is
-	reccomended to look at the source for this API as documentation instead.
+	recommended to look at the source for this API as documentation instead.
 </h2>
 <p>This site has an API that allows developers to easily generate QR codes.</p>
 <p>Headers are not required to use the API</p>

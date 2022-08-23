@@ -1,7 +1,6 @@
 <script lang="ts">
 	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 	import GithubIcon from '$lib/GithubIcon.svelte';
-	import SelectorIcon from '$lib/icons/Selector.svelte';
 	import {
 		Listbox,
 		ListboxButton,
@@ -15,9 +14,10 @@
 	import { classNames } from '$lib/class-names';
 	import iro from '@jaames/iro';
 	import { onMount } from 'svelte';
-	import ActionButtons from '$lib/ActionButtons.svelte';
+	import ActionButtons from './ActionButtons.svelte';
 	import { API_ROOT } from '$lib/constants';
 	import Dialog, { openModal } from '$lib/Dialog.svelte';
+	import { page } from '$app/stores';
 	import { selfQr } from '$lib/selfQrData';
 
 	$: rawData = new Response();
@@ -40,7 +40,9 @@
 		{ name: 'High', value: 'H' },
 	];
 
-	$: url = `https://generate-qr.codes/`;
+	const textParam = $page.url.searchParams.get('text');
+
+	$: url = textParam ?? `https://generate-qr.codes/`;
 	$: selectedFormat = format[0];
 	$: margin = 4;
 	$: resolution = 1080;
@@ -177,7 +179,10 @@
 		<h2 class="mt-2">Options</h2>
 
 		<p class="mb-1">
-			Text/URL <button class="text-gray-500" on:click={() => ($openModal = 'text')}>
+			Text/URL <button
+				class="text-gray-500"
+				on:click={() => ($openModal = 'text')}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5"
@@ -204,7 +209,10 @@
 		/>
 
 		<p class="mb-1">
-			Image Format <button class="text-gray-500" on:click={() => ($openModal = 'format')}>
+			Image Format <button
+				class="text-gray-500"
+				on:click={() => ($openModal = 'format')}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5"
@@ -227,12 +235,17 @@
 						JPG <ul><li>Better for printing</li></ul>
 					</li>
 					<li>
-						WEBP <ul><li>Great for websites, but lacks compatibility with other programs.</li></ul>
+						WEBP <ul>
+							<li>
+								Great for websites, but lacks compatibility with other programs.
+							</li>
+						</ul>
 					</li>
 					<li>
 						AVIF <ul>
 							<li>
-								Currently unsupported due to too slow processing, often resulting in timeouts.
+								Currently unsupported due to too slow processing, often
+								resulting in timeouts.
 							</li>
 						</ul>
 					</li>
@@ -246,8 +259,8 @@
 						SVG
 						<ul>
 							<li>
-								Provides the highest quality, but only works in very certain scenarios. Great for
-								editing vector graphics and posters.
+								Provides the highest quality, but only works in very certain
+								scenarios. Great for editing vector graphics and posters.
 							</li>
 						</ul>
 					</li>
@@ -255,17 +268,37 @@
 			</Dialog>
 		</p>
 		<div class="mb-6 w-72 relative">
-			<Listbox value={selectedFormat} on:change={(e) => (selectedFormat = e.detail)}>
+			<Listbox
+				value={selectedFormat}
+				on:change={(e) => (selectedFormat = e.detail)}
+			>
 				<div class="relative mt-1">
 					<ListboxButton
 						class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
 					>
 						<span class="block truncate">{selectedFormat.format}</span>
-						<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-							<SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+						<span
+							class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+						>
+							<svg
+								class="w-5 h-5 text-gray-400"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								aria-hidden="true"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+									clip-rule="evenodd"
+								/>
+							</svg>
 						</span>
 					</ListboxButton>
 					<Transition
+						enter="transition ease-out duration-100"
+						enterFrom="opacity-0"
+						enterTo="opacity-100"
 						leave="transition ease-in duration-100"
 						leaveFrom="opacity-100"
 						leaveTo="opacity-0"
@@ -284,11 +317,17 @@
 									value={person}
 									let:selected
 								>
-									<span class={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
+									<span
+										class={`block truncate ${
+											selected ? 'font-bold' : 'font-normal'
+										}`}
+									>
 										{person.format}
 									</span>
 									{#if selected}
-										<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500">
+										<span
+											class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500"
+										>
 											<svg
 												class="w-5 h-5"
 												xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +351,10 @@
 			</Listbox>
 		</div>
 		<p class="mb-1">
-			Margin <button class="text-gray-500" on:click={() => ($openModal = 'margin')}>
+			Margin <button
+				class="text-gray-500"
+				on:click={() => ($openModal = 'margin')}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5"
@@ -327,7 +369,8 @@
 				</svg>
 			</button>
 			<Dialog open={$openModal === 'margin'} title="Text/URL">
-				This is the white (or other custom background color) around the sides of the QR code.
+				This is the white (or other custom background color) around the sides of
+				the QR code.
 			</Dialog>
 		</p>
 		<input
@@ -337,7 +380,10 @@
 			class="input dark:bg-gray-800 dark:text-slate-300"
 		/>
 		<p class="mb-1">
-			Image Resolution/Size <button class="text-gray-500" on:click={() => ($openModal = 'res')}>
+			Image Resolution/Size <button
+				class="text-gray-500"
+				on:click={() => ($openModal = 'res')}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5"
@@ -352,7 +398,8 @@
 				</svg>
 			</button>
 			<Dialog open={$openModal === 'res'} title="Text/URL">
-				The quality of the image. Increase this number the larger the actual image will be.
+				The quality of the image. Increase this number the larger the actual
+				image will be.
 			</Dialog>
 		</p>
 		<input
@@ -372,7 +419,9 @@
 
 			<div class="flex items-start mb-4">
 				<SwitchGroup as="div" class="flex items-center space-x-4">
-					<SwitchLabel class="text-black dark:text-white">Transparent Background</SwitchLabel>
+					<SwitchLabel class="text-black dark:text-white"
+						>Transparent Background</SwitchLabel
+					>
 					<Switch
 						as="button"
 						checked={transparentBackground}
@@ -436,9 +485,10 @@
 					</svg>
 				</button>
 				<Dialog open={$openModal === 'err correction'} title="Text/URL">
-					This value represents the amount of the non-critical parts of the QR code that can be
-					covered, while keeping the QR code functional. Increasing this value also decreases the
-					amount of data that can be stored in the QR code.
+					This value represents the amount of the non-critical parts of the QR
+					code that can be covered, while keeping the QR code functional.
+					Increasing this value also decreases the amount of data that can be
+					stored in the QR code.
 				</Dialog>
 			</p>
 			<div class="mb-6 w-72 relative">
@@ -450,12 +500,31 @@
 						<ListboxButton
 							class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
 						>
-							<span class="block truncate">{selectedErrorCorrectionLevel.name}</span>
-							<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-								<SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+							<span class="block truncate"
+								>{selectedErrorCorrectionLevel.name}</span
+							>
+							<span
+								class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									aria-hidden="true"
+									class="w-5 h-5 text-gray-400"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+										clip-rule="evenodd"
+									/>
+								</svg>
 							</span>
 						</ListboxButton>
 						<Transition
+							enter="transition ease-out duration-100"
+							enterFrom="opacity-0"
+							enterTo="opacity-100"
 							leave="transition ease-in duration-100"
 							leaveFrom="opacity-100"
 							leaveTo="opacity-0"
@@ -474,11 +543,17 @@
 										value={person}
 										let:selected
 									>
-										<span class={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
+										<span
+											class={`block truncate ${
+												selected ? 'font-bold' : 'font-normal'
+											}`}
+										>
 											{person.name}
 										</span>
 										{#if selected}
-											<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500">
+											<span
+												class="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-500"
+											>
 												<svg
 													class="w-5 h-5"
 													xmlns="http://www.w3.org/2000/svg"
@@ -504,7 +579,9 @@
 		</details>
 	</div>
 </div>
-<p class="prose-sm"><a href="/api" class="text-slate-400 dark:text-gray-400">QR Code API</a></p>
+<p class="prose-sm">
+	<a href="/api" class="text-slate-400 dark:text-gray-400">QR Code API</a>
+</p>
 <GithubIcon />
 
 <style lang="scss">

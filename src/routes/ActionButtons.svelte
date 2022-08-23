@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { downloadURI } from './download';
+	import { downloadURI } from '$lib/download';
 
 	export let disabled = false;
 	export let uri = '';
