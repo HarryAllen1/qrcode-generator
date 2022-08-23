@@ -128,6 +128,7 @@
 		{#await data}
 			<img
 				class="w-96 pixelated shadow-md"
+				id="placeholder-image"
 				src={oldImage}
 				alt="placeholder"
 				width="384"
@@ -145,6 +146,7 @@
 			{:else}
 				<img
 					class="w-96 pixelated shadow-md"
+					id="qr-image"
 					width="384"
 					height="384"
 					src={!image.data
@@ -201,6 +203,7 @@
 			</Dialog>
 		</p>
 		<input
+			id="text-input"
 			bind:value={url}
 			type="text"
 			spellcheck={false}
@@ -267,14 +270,14 @@
 				</ul>
 			</Dialog>
 		</p>
-		<div class="mb-6 w-72 relative">
+		<div class="mb-6 w-72 relative" id="image-format">
 			<Listbox
 				value={selectedFormat}
 				on:change={(e) => (selectedFormat = e.detail)}
 			>
 				<div class="relative mt-1">
 					<ListboxButton
-						class="relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+						class="image-format-btn relative w-72 py-2 pl-3 pr-10 text-left bg-white dark:bg-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
 					>
 						<span class="block truncate">{selectedFormat.format}</span>
 						<span
