@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('@typescript-eslint/utils').TSESLint.Linter.Config} */
+const config = {
 	root: true,
 	parser: '@typescript-eslint/parser',
 	extends: [
@@ -21,4 +22,9 @@ module.exports = {
 		es2017: true,
 		node: true,
 	},
+	rules: {
+		'@typescript-eslint/ban-ts-comment': 'off',
+	},
 };
+
+module.exports = config;

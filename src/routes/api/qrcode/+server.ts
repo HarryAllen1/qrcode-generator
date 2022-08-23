@@ -103,13 +103,10 @@ export const POST: RequestHandler = async ({ request }) => {
 		const remappedFormat = formatParam === 'jpg' ? 'jpeg' : formatParam;
 
 		return json({
-			data: `${noDataURLParam ? '' : `data:image/${remappedFormat};base64,`}${
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-				// @ts-ignore
-				(
-					await (sharpProcessed[remappedFormat]() as sharp.Sharp).toBuffer()
-				).toString('base64')
-			}`,
+			data: `${noDataURLParam ? '' : `data:image/${remappedFormat};base64,`}${(
+				await // @ts-ignore
+				(sharpProcessed[remappedFormat]() as sharp.Sharp).toBuffer()
+			).toString('base64')}`,
 			type: remappedFormat,
 		});
 	} catch (e) {
