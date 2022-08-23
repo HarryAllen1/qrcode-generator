@@ -24,9 +24,9 @@ test.describe('format picker', async () => {
 		expect(await page.locator('#qr-image').getAttribute('src')).toContain(
 			'data:image/png'
 		);
-		expect(await page.locator('.image-format-btn span').textContent()).toBe(
-			'png'
-		);
+		expect(
+			await page.locator('.image-format-btn span.block.truncate').textContent()
+		).toBe('png');
 	});
 
 	test('picking jpeg changes image type', async ({ page }) => {
@@ -37,9 +37,9 @@ test.describe('format picker', async () => {
 		expect(await page.locator('#qr-image').getAttribute('src')).toContain(
 			'data:image/jpeg'
 		);
-		expect(await page.locator('.image-format-btn span').textContent()).toBe(
-			'jpg'
-		);
+		expect(
+			await page.locator('.image-format-btn span.block.truncate').textContent()
+		).toBe('jpg');
 	});
 
 	test('picking webp changes image type', async ({ page }) => {
@@ -50,8 +50,8 @@ test.describe('format picker', async () => {
 		expect(await page.locator('#qr-image').getAttribute('src')).toContain(
 			'data:image/webp'
 		);
-		expect(await page.locator('.image-format-btn span').textContent()).toBe(
-			'webp'
-		);
+		expect(
+			await page.locator('.image-format-btn span.block.truncate').textContent()
+		).toBe('webp');
 	});
 });
