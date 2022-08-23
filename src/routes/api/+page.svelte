@@ -18,12 +18,15 @@
 <GithubIcon />
 <DarkModeSwitch />
 <h2 class="text-red-500">
-	Since the main site is still being worked on, many undocumented changes are being made. It is
-	recommended to look at the source for this API as documentation instead.
+	Since the main site is still being worked on, many undocumented changes are
+	being made. It is recommended to look at the source for this API as
+	documentation instead.
 </h2>
 <p>This site has an API that allows developers to easily generate QR codes.</p>
 <p>Headers are not required to use the API</p>
-<p>The endpoint for this api is <code>{$page.url.origin}/generate/qrcode</code></p>
+<p>
+	The endpoint for this api is <code>{$page.url.origin}/generate/qrcode</code>
+</p>
 <p>Example response (in JSON):</p>
 <CodeBlock input={exampleResponse} />
 
@@ -33,7 +36,9 @@
 	<ul>
 		<li>The URI-encoded text to generate the QR code for</li>
 		<li>
-			Tip: Encode the text for this parameter by using the <code>encodeURIComponent</code> function
+			Tip: Encode the text for this parameter by using the <code
+				>encodeURIComponent</code
+			> function
 		</li>
 	</ul>
 	<li><code>format</code></li>
@@ -48,9 +53,8 @@
 	<li><code>size</code></li>
 	<ul>
 		<li>
-			The size of the one side of the QR code in pixels. Only required if the format is not <code>
-				svg
-			</code>
+			The size of the one side of the QR code in pixels. Only required if the
+			format is not <code> svg </code>
 			or <code>terminal</code>
 		</li>
 	</ul>

@@ -23,7 +23,11 @@
 </script>
 
 <Transition appear show={open}>
-	<Dialog as="div" class="fixed inset-0 z-10 overflow-y-auto" on:close={closeModal}>
+	<Dialog
+		as="div"
+		class="fixed inset-0 z-10 overflow-y-auto"
+		on:close={closeModal}
+	>
 		<div class="min-h-screen px-4 text-center">
 			<TransitionChild
 				enter="ease-out duration-300"
@@ -49,7 +53,10 @@
 				<div
 					class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-200 dark:bg-slate-900 shadow-xl text-black dark:text-white rounded-2xl"
 				>
-					<DialogTitle as="h3" class="text-lg font-medium leading-6 text-black dark:text-white">
+					<DialogTitle
+						as="h3"
+						class="text-lg font-medium leading-6 text-black dark:text-white"
+					>
 						{title}
 					</DialogTitle>
 					<div class="mt-2">

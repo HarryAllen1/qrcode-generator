@@ -5,7 +5,11 @@
 </script>
 
 <script lang="ts">
-	import { Switch, SwitchGroup, SwitchLabel } from '@rgossiaux/svelte-headlessui';
+	import {
+		Switch,
+		SwitchGroup,
+		SwitchLabel,
+	} from '@rgossiaux/svelte-headlessui';
 	import { onMount } from 'svelte';
 
 	function classNames(...classes: (string | false | null | undefined)[]) {
@@ -17,7 +21,8 @@
 
 		if (
 			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			(!('theme' in localStorage) &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark', 'changing-theme');
 		} else {

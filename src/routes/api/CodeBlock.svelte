@@ -14,7 +14,10 @@
 	$: {
 		getHighlighter({ theme: $state ? darkTheme : lightTheme })
 			.then((highlighter) => {
-				code = highlighter.codeToHtml(input, { lang, theme: $state ? darkTheme : lightTheme });
+				code = highlighter.codeToHtml(input, {
+					lang,
+					theme: $state ? darkTheme : lightTheme,
+				});
 			})
 			.catch((err) => {
 				console.log(err);

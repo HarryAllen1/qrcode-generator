@@ -6,13 +6,25 @@
 		<link rel="manifest" href="%sveltekit.assets%/manifest.webmanifest" />
 		<meta name="viewport" content="width=device-width" />
 		<title>QR Code Generator</title>
-		<meta name="description" content="An ultra-customizable QR code generator" />
+		<meta
+			name="description"
+			content="An ultra-customizable QR code generator"
+		/>
 		<meta property="og:title" content="QR Code Generator" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://generate-qr.codes/" />
-		<meta property="og:image" content="https://www.generate-qr.codes/self-qr.webp" />
-		<meta property="og:description" content="An ultra-customizable QR code generator" />
-		<link rel="apple-touch-icon" href="%sveltekit.assets%/icons/apple-icon-180.png" />
+		<meta
+			property="og:image"
+			content="https://www.generate-qr.codes/self-qr.webp"
+		/>
+		<meta
+			property="og:description"
+			content="An ultra-customizable QR code generator"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="%sveltekit.assets%/icons/apple-icon-180.png"
+		/>
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link
 			rel="apple-touch-startup-image"
@@ -148,7 +160,8 @@
 			try {
 				if (
 					localStorage.theme === 'dark' ||
-					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+					(!('theme' in localStorage) &&
+						window.matchMedia('(prefers-color-scheme: dark)').matches)
 				) {
 					document.documentElement.classList.add('dark');
 				} else {
@@ -164,7 +177,9 @@
 		</style>
 		%sveltekit.head%
 	</head>
-	<body class="bg-gray-200 dark:bg-slate-900 w-full md:overflow-y-scroll h-full">
+	<body
+		class="bg-gray-200 dark:bg-slate-900 w-full md:overflow-y-scroll h-full"
+	>
 		<p class="sr-only">An ultra-customizable QR code generator</p>
 		<div
 			class="prose w-full flex flex-col items-center max-w-full p-4 overflow-x-hidden text-black dark:text-white"
@@ -172,7 +187,10 @@
 			%sveltekit.body%
 		</div>
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TE03TK3XY"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-0TE03TK3XY"
+		></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {

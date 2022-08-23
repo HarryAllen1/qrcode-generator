@@ -54,7 +54,8 @@ async function fetchAndCache(request: Request) {
 }
 
 worker.addEventListener('fetch', (event) => {
-	if (event.request.method !== 'GET' || event.request.headers.has('range')) return;
+	if (event.request.method !== 'GET' || event.request.headers.has('range'))
+		return;
 
 	const url = new URL(event.request.url);
 
@@ -62,8 +63,10 @@ worker.addEventListener('fetch', (event) => {
 	const isHttp = url.protocol.startsWith('http');
 	const isDevServerRequest =
 		url.hostname === self.location.hostname && url.port !== self.location.port;
-	const isStaticAsset = url.host === self.location.host && staticAssets.has(url.pathname);
-	const skipBecauseUncached = event.request.cache === 'only-if-cached' && !isStaticAsset;
+	const isStaticAsset =
+		url.host === self.location.host && staticAssets.has(url.pathname);
+	const skipBecauseUncached =
+		event.request.cache === 'only-if-cached' && !isStaticAsset;
 
 	if (isHttp && !isDevServerRequest && !skipBecauseUncached) {
 		event.respondWith(
@@ -71,7 +74,8 @@ worker.addEventListener('fetch', (event) => {
 				// always serve static files and bundler-generated assets from cache.
 				// if your application has other URLs with data that will never change,
 				// set this variable to true for them and they will only be fetched once.
-				const cachedAsset = isStaticAsset && (await caches.match(event.request));
+				const cachedAsset =
+					isStaticAsset && (await caches.match(event.request));
 
 				return cachedAsset || fetchAndCache(event.request);
 			})()

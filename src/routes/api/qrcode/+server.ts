@@ -16,11 +16,21 @@ export const POST: RequestHandler = async ({ request }) => {
 		errorCorrection: errorCorrectionParam,
 	} = (await request.json()) as Record<string, string>;
 
-	const allowedFormats = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'gif', 'terminal'];
+	const allowedFormats = [
+		'svg',
+		'png',
+		'jpg',
+		'jpeg',
+		'webp',
+		'gif',
+		'terminal',
+	];
 
 	if (
 		errorCorrectionParam &&
-		!['L', 'M', 'Q', 'H', 'low', 'medium', 'quartile', 'high'].includes(errorCorrectionParam)
+		!['L', 'M', 'Q', 'H', 'low', 'medium', 'quartile', 'high'].includes(
+			errorCorrectionParam
+		)
 	)
 		return error(
 			400,
@@ -36,7 +46,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	if (!allowedFormats.includes(formatParam))
 		return error(
 			400,
-			'The format query param was not one of the following: ' + allowedFormats.join(', ')
+			'The format query param was not one of the following: ' +
+				allowedFormats.join(', ')
 		);
 
 	try {
@@ -46,7 +57,8 @@ export const POST: RequestHandler = async ({ request }) => {
 			const data = await QRCode.toString(url, {
 				type: formatParam as 'svg' | 'terminal',
 				margin: marginParam ? parseInt(marginParam) : undefined,
-				errorCorrectionLevel: (errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
+				errorCorrectionLevel:
+					(errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
 				color: {
 					light: backgroundColorParam ? `#${backgroundColorParam}` : '#fff',
 					dark: foregroundColorParam ? `#${foregroundColorParam}` : '#000',
@@ -55,16 +67,17 @@ export const POST: RequestHandler = async ({ request }) => {
 			return json({
 				data,
 				type: formatParam,
-				asDataURL: `${noDataURLParam ? '' : 'data:image/svg+xml;base64,'}${Buffer.from(
-					data
-				).toString('base64')}`,
+				asDataURL: `${
+					noDataURLParam ? '' : 'data:image/svg+xml;base64,'
+				}${Buffer.from(data).toString('base64')}`,
 			});
 		}
 		if (formatParam === 'terminal')
 			return json({
 				data: await QRCode.toString(url, {
 					type: formatParam as 'svg' | 'terminal',
-					errorCorrectionLevel: (errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
+					errorCorrectionLevel:
+						(errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
 					margin: marginParam ? parseInt(marginParam) : undefined,
 				}),
 				type: formatParam,
@@ -77,7 +90,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		const svgData = await QRCode.toString(url, {
 			type: 'svg',
 			margin: marginParam ? parseInt(marginParam) : undefined,
-			errorCorrectionLevel: (errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
+			errorCorrectionLevel:
+				(errorCorrectionParam as QRCodeErrorCorrectionLevel) ?? 'M',
 			width: parseInt(sizeParam ?? '1080'),
 			color: {
 				light: backgroundColorParam ? `#${backgroundColorParam}` : '#fff',
@@ -92,7 +106,9 @@ export const POST: RequestHandler = async ({ request }) => {
 			data: `${noDataURLParam ? '' : `data:image/${remappedFormat};base64,`}${
 				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
-				(await (sharpProcessed[remappedFormat]() as sharp.Sharp).toBuffer()).toString('base64')
+				(
+					await (sharpProcessed[remappedFormat]() as sharp.Sharp).toBuffer()
+				).toString('base64')
 			}`,
 			type: remappedFormat,
 		});
