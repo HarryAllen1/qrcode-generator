@@ -1,14 +1,9 @@
 <script lang="ts">
-	import {
-		Switch,
-		SwitchGroup,
-		SwitchLabel,
-	} from '@rgossiaux/svelte-headlessui';
 	import { url } from './data';
 
 	export let type = '';
 
-	let encryption: 'WPA' | 'WEP' | 'None' = 'None';
+	// let encryption: 'WPA' | 'WEP' | 'None' = 'None';
 
 	$: ssid = '';
 	$: password = '';
