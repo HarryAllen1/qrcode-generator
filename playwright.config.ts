@@ -1,4 +1,34 @@
-import { devices, type PlaywrightTestConfig } from '@playwright/test';
+import {
+	devices,
+	type PlaywrightTestConfig,
+	type PlaywrightTestOptions,
+	type PlaywrightWorkerOptions,
+	type Project,
+} from '@playwright/test';
+
+const projects: Project<PlaywrightTestOptions, PlaywrightWorkerOptions>[] = [];
+
+const devicesToTest = [
+	devices['Desktop Chrome'],
+	devices['Desktop Firefox'],
+	devices['Desktop Safari'],
+	devices['Desktop Edge'],
+	devices['iPhone 11'],
+	devices['iPhone 11 landscape'],
+	devices['iPad (gen 6)'],
+	devices['iPad (gen 6) landscape'],
+	devices['Pixel 4'],
+	devices['Pixel 4 landscape'],
+];
+
+devicesToTest.forEach((v) => {
+	projects.push({
+		name: Object.keys(devices).find((k) => devices[k] === v),
+		use: {
+			...v,
+		},
+	});
+});
 
 const config: PlaywrightTestConfig = {
 	testDir: 'tests',
@@ -7,34 +37,6 @@ const config: PlaywrightTestConfig = {
 		port: 4173,
 	},
 	fullyParallel: true,
-	projects: [
-		//--begin-chromium
-		{
-			name: 'chromium',
-			use: {
-				...devices['Desktop Chrome'],
-			},
-		},
-		//--end-chromium
-
-		//--begin-firefox
-		{
-			name: 'firefox',
-			use: {
-				...devices['Desktop Firefox'],
-			},
-		},
-		//--end-firefox
-
-		//--begin-webkit
-		{
-			name: 'webkit',
-			use: {
-				...devices['Desktop Safari'],
-			},
-		},
-		//--end-webkit
-	],
+	projects,
 };
-
 export default config;
