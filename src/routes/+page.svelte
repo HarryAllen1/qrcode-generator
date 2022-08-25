@@ -89,9 +89,10 @@
 			// @ts-ignore
 			new iro.ColorPicker(foregroundPickerEl, {
 				color: '#000',
-				width: 275,
+				width: 225,
 				borderWidth: 2,
 				wheelLightness: false,
+				layoutDirection: 'horizontal',
 			});
 
 		foregroundColor = foregroundIroColorPicker.color.hexString;
@@ -105,9 +106,10 @@
 			// @ts-ignore
 			new iro.ColorPicker(backgroundPickerEl, {
 				color: '#fff',
-				width: 275,
+				width: 225,
 				borderWidth: 2,
 				wheelLightness: false,
+				layoutDirection: 'horizontal',
 			});
 
 		backgroundColor = backgroundIroColorPicker.color.hexString;
