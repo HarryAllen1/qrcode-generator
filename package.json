@@ -17,7 +17,7 @@
 	"devDependencies": {
 		"@playwright/test": "1.25.1",
 		"@sveltejs/adapter-vercel": "next",
-		"@sveltejs/kit": "1.0.0-next.443",
+		"@sveltejs/kit": "1.0.0-next.444",
 		"@tailwindcss/typography": "0.5.4",
 		"@types/qrcode": "1.5.0",
 		"@types/sharp": "0.30.5",
