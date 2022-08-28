@@ -1,9 +1,9 @@
 name: Keep Supabase Alive
 
 on:
- schedule:
-   - cron: 0 0 * * FRI
- workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * FRI
+  workflow_dispatch:
 
 jobs:
   Curl:
@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Curl db
         run: >
-         curl "https://usnrvywhbhwtkdzozdrc.supabase.co/rest/v1/profiles" -H "apikey: ${{ env.SUPABASE_API_KEY}}" -H "Authorization: Bearer ${{ env.SUPABASE_API_KEY}}"
+          curl "https://usnrvywhbhwtkdzozdrc.supabase.co/rest/v1/profiles" -H "apikey: ${{ env.SUPABASE_API_KEY}}" -H "Authorization: Bearer ${{ env.SUPABASE_API_KEY}}"
