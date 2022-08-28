@@ -11,4 +11,5 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Curl db
-        run:  curl 'https://usnrvywhbhwtkdzozdrc.supabase.co/rest/v1/profiles' -H "apikey: ${{ env.SUPABASE_API_KEY}}" -H "Authorization: Bearer ${{ env.SUPABASE_API_KEY}}"
+        run: >
+         curl "https://usnrvywhbhwtkdzozdrc.supabase.co/rest/v1/profiles" -H "apikey: ${{ env.SUPABASE_API_KEY}}" -H "Authorization: Bearer ${{ env.SUPABASE_API_KEY}}"
