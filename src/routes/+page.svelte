@@ -188,6 +188,7 @@
 		<p class="mb-1">
 			Text/URL <button
 				class="text-gray-500"
+				aria-label="More info"
 				on:click={() => ($openModal = 'text')}
 			>
 				<svg
@@ -219,6 +220,7 @@
 		<p class="mb-1">
 			Image Format <button
 				class="text-gray-500"
+				aria-label="More info"
 				on:click={() => ($openModal = 'format')}
 			>
 				<svg
@@ -361,6 +363,7 @@
 		<p class="mb-1">
 			Margin <button
 				class="text-gray-500"
+				aria-label="More info"
 				on:click={() => ($openModal = 'margin')}
 			>
 				<svg
@@ -390,6 +393,7 @@
 		<p class="mb-1">
 			Image Resolution/Size <button
 				class="text-gray-500"
+				aria-label="More info"
 				on:click={() => ($openModal = 'res')}
 			>
 				<svg
@@ -500,6 +504,7 @@
 			<p class="mb-1">
 				Error Correction Level <button
 					class="text-gray-500"
+					aria-label="More info"
 					on:click={() => ($openModal = 'err correction')}
 				>
 					<svg
