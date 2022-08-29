@@ -26,7 +26,7 @@ devDependencies:
     version: 1.25.1
   '@sveltejs/adapter-vercel':
     specifier: next
-    version: 1.0.0-next.69
+    version: 1.0.0-next.70
   '@sveltejs/kit':
     specifier: next
     version: 1.0.0-next.445_svelte@3.49.0+vite@3.0.9
@@ -73,8 +73,8 @@ devDependencies:
     specifier: 3.49.0
     version: 3.49.0
   svelte-check:
-    specifier: 2.8.1
-    version: 2.8.1_f4ocuume5qq4kteljx4yno44ge
+    specifier: 2.9.0
+    version: 2.9.0_f4ocuume5qq4kteljx4yno44ge
   svelte-preprocess:
     specifier: 4.10.7
     version: 4.10.7_jy4oxuffztmxub3wtzqut5xasu
@@ -334,8 +334,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.69:
-    resolution: {integrity: sha512-E5mSkD3x3zYuJU5hPRmoqblrKZtEj2lRwhObnXf4OSFsMej2VUzoogbhaXHcVt57j0Ja5HgO07u7v9VUGOhi+w==}
+  /@sveltejs/adapter-vercel/1.0.0-next.70:
+    resolution: {integrity: sha512-0kwOpzrgpmHXnx+47fYzD5wrINjZvibL/ewq2dDYJiGxeAT/kNmszrIyoCDxm0oq7n1/+mLsyzX0V+lMs+leKg==}
     dependencies:
       '@vercel/nft': 0.22.0
       esbuild: 0.14.54
@@ -2500,8 +2500,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.8.1_f4ocuume5qq4kteljx4yno44ge:
-    resolution: {integrity: sha512-cibyY1sgt3ONIDnQbSgV2X9AJFhwEslRHNo95lijrYfPzVEvTvbmL2ohsUyqB5L7j1GhLXtQbjCJ4lZZ/fwbeQ==}
+  /svelte-check/2.9.0_f4ocuume5qq4kteljx4yno44ge:
+    resolution: {integrity: sha512-9AVrtP7WbfDgCdqTZNPdj5CCCy1OrYMxFVWAWzNw7fl93c9klFJFtqzVXa6fovfQ050CcpUyJE2dPFL9TFAREw==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
