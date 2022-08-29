@@ -121,6 +121,9 @@
 	$: if (foregroundIroColorPicker) {
 		foregroundIroColorPicker.color.hexString = foregroundColor;
 	}
+
+	let imageUploadButton: HTMLInputElement;
+	let fileName = '';
 </script>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
@@ -467,6 +470,29 @@
 					JPGs don't support transparent backgrounds, making the background black.
 				</p>
 			{/if}
+		</details>
+		<details>
+			<summary> Icon </summary>
+
+			<input
+				id="image-upload"
+				type="file"
+				bind:this={imageUploadButton}
+				on:change={(e) => {
+					fileName = (e.currentTarget.files ?? [{ name: '' }])[0].name;
+				}}
+				hidden
+				accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml,.svg,image/avif,image/tiff"
+			/>
+			<label
+				for="image-upload"
+				class="mt-2 inline-flex disabled:opacity-60 disabled:saturate-0 mr-4 justify-center rounded-md border border-transparent bg-blue-200 dark:bg-blue-600 text-blue-900 dark:text-white px-4 py-2 text-sm font-medium hover:bg-blue-300 dark:hover:bg-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+			>
+				Choose Image
+			</label>
+			<p>
+				{fileName || 'No image selected'}
+			</p>
 		</details>
 		<details>
 			<summary> Advanced </summary>
