@@ -1,10 +1,23 @@
+import { createCanvas, loadImage } from '@napi-rs/canvas';
+import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async ({ request }) => {
-	const { imageDataURL }: Record<string, string> = await request.json();
-	// const data = await request.json();
-	// const image = data.image;
-	// const imageBorderRadius = data.imageBorderRadius;
+	const { imageDataURL, qrCodeImageDataURL, width }: Record<string, string> =
+		await request.json();
 
-	return new Response(undefined);
+	const canvas = createCanvas(parseInt(width), parseInt(width));
+	const ctx = canvas.getContext('2d');
+
+	ctx.drawImage(
+		await loadImage(qrCodeImageDataURL),
+		0,
+		0,
+		canvas.width,
+		canvas.height
+	);
+
+	return json({
+		imageDataURL: canvas.toDataURL(),
+	});
 };
