@@ -8,7 +8,7 @@
 	"rewrites": [
 		{
 			"source": "/docs/:path*",
-			"destination": "https://qrcode-generator-docs.vercel.app"
+			"destination": "https://qrcode-generator-docs.vercel.app/:path*"
 		}
 	]
 }
