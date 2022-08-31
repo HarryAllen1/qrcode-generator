@@ -1,7 +1,13 @@
 {
+	"redirects": [
+		{
+			"source": "/api",
+			"destination": "/docs"
+		}
+	],
 	"rewrites": [
 		{
-			"source": "/api/:path*",
+			"source": "/docs/:path*",
 			"destination": "https://qrcode-generator-docs.vercel.app"
 		}
 	]
