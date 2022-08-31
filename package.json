@@ -12,9 +12,12 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-		"test": "playwright test"
+		"test": "playwright test",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs"
 	},
 	"devDependencies": {
+		"@algolia/client-search": "^4.14.2",
 		"@playwright/test": "1.25.1",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
@@ -37,7 +40,8 @@
 		"tailwindcss": "3.1.8",
 		"tslib": "2.4.0",
 		"typescript": "4.8.2",
-		"vite": "3.1.0-beta.1"
+		"vite": "3.1.0-beta.1",
+		"vitepress": "1.0.0-alpha.13"
 	},
 	"type": "module",
 	"dependencies": {
@@ -45,8 +49,7 @@
 		"@napi-rs/canvas": "0.1.29",
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"qrcode": "1.5.1",
-		"sharp": "0.30.7",
-		"shiki": "0.11.1"
+		"sharp": "0.30.7"
 	},
 	"engines": {
 		"pnpm": ">=7.7.0"
