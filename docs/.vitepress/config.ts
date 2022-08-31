@@ -31,6 +31,7 @@ export default defineConfig({
 		sidebar: [
 			{
 				text: 'Endpoints',
+				collapsible: true,
 				items: [
 					{
 						text: 'QR Code',
