@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
 	import type { Provider } from '@supabase/supabase-js';
+	import { page } from '$app/stores';
 	import DarkModeSwitch from '../../lib/DarkModeSwitch.svelte';
 
 	let loading = false;
@@ -24,7 +25,7 @@
 			loading = true;
 			const { error } = await supabase.auth.signInWithOAuth({
 				provider,
-				options: {},
+				options: { redirectTo: $page.url.origin },
 			});
 			if (error) throw error;
 		} catch (error: any) {
