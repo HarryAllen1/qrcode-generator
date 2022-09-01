@@ -29,7 +29,7 @@ devDependencies:
     version: 1.0.0-next.72
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.459_fhgkwirxvgjw2igda6zmhiisma
+    version: 1.0.0-next.461_fhgkwirxvgjw2igda6zmhiisma
   '@tailwindcss/typography':
     specifier: 0.5.4
     version: 0.5.4_tailwindcss@3.1.8
@@ -523,8 +523,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.459_fhgkwirxvgjw2igda6zmhiisma:
-    resolution: {integrity: sha512-rMTbe6JuRILP69qVwNPt7Mnp/iJJ45wTO4ALpMYZy4ReknrY3iuweV/gPccmWCyhDrJ4ZNruwb0uw3tYuVgfsg==}
+  /@sveltejs/kit/1.0.0-next.461_fhgkwirxvgjw2igda6zmhiisma:
+    resolution: {integrity: sha512-REe/ZIjE9F6ndEtCn4oPXpGWjiyLtOVWKJ73q53I3zxxoohL8OG6Zy0tnrdSvQj0nOBFTyQ4QXeYFn4TAO5oSw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
