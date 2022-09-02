@@ -16,7 +16,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - uses: actions/setup-node@v2.1.5
+      - uses: actions/setup-node@v3.4.1
         with:
           node-version: node
       - run: npx openapi-typescript ${{ secrets.SUPABASE_URL }}/rest/v1/\?apikey\=${{ secrets.SUPABASE_ANON_KEY }} --output types/supabase.ts
