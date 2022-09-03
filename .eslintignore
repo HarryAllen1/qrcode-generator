@@ -13,4 +13,6 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
-types/supabase.ts
+src/types/supabase.ts
+
+docs/.vitepress/dist
