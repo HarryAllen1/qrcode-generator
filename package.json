@@ -51,7 +51,7 @@
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"@supabase/supabase-js": "2.0.0-rc.8",
 		"qrcode": "1.5.1",
-		"sharp": "0.30.7"
+		"sharp": "0.31.0"
 	},
 	"engines": {
 		"pnpm": ">=7.7.0"
