@@ -19,7 +19,7 @@ export default defineConfig({
 		],
 		editLink: {
 			pattern:
-				'https://github.com/MajesticString/qrcode-generator/edit/main/summary/:path',
+				'https://github.com/MajesticString/qrcode-generator/edit/main/docs/:path',
 			text: 'Edit this page on GitHub',
 		},
 		nav: [
