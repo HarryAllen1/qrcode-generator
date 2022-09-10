@@ -11,8 +11,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2_svelte@3.50.1
   '@supabase/supabase-js':
-    specifier: 2.0.0-rc.8
-    version: 2.0.0-rc.8
+    specifier: 2.0.0-rc.10
+    version: 2.0.0-rc.10
   qrcode:
     specifier: 1.5.1
     version: 1.5.1
@@ -29,10 +29,10 @@ devDependencies:
     version: 1.25.2
   '@sveltejs/adapter-vercel':
     specifier: next
-    version: 1.0.0-next.72
+    version: 1.0.0-next.73
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.478_svelte@3.50.1+vite@3.1.0
+    version: 1.0.0-next.480_svelte@3.50.1+vite@3.1.0
   '@tailwindcss/typography':
     specifier: 0.5.7
     version: 0.5.7_tailwindcss@3.1.8
@@ -533,16 +533,16 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/gotrue-js/2.0.0-rc.3:
-    resolution: {integrity: sha512-kvE6UaolJ2K1eZ2M7XiliB3Xg2pyWfDZF/WBGb36OsXirrAOdbXRecIxQxtoFYvTRJD8aEpEWrBcozqhQ6wIOA==}
+  /@supabase/gotrue-js/2.0.0-rc.4:
+    resolution: {integrity: sha512-jHWyF1/Rl/1MXybFnHnHVjXYrOuvLzSUACow2Ii2KFD7zURPjPzy5KvOzq6tk+wL92LDgCl88nU1QVvO7dvRog==}
     dependencies:
       cross-fetch: 3.1.5
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@supabase/postgrest-js/1.0.0-rc.4:
-    resolution: {integrity: sha512-/0E73jHi7mOX0OJlbxdQMk4n3wUJq9WICtHPzWzNHlYdHTfB2GpBsgSLbptRrerQVZ9fI/OZZbEeRNcxw24sgQ==}
+  /@supabase/postgrest-js/1.0.0-rc.5:
+    resolution: {integrity: sha512-rBOyhK+qLd2fdX6WbCW3e9gY9qbwC5Zeso6QWM+00RlRz3k156lxnreVpe4KKGXNT3JMqJwAHXjQ2lbxmtBJqg==}
     dependencies:
       cross-fetch: 3.1.5
     transitivePeerDependencies:
@@ -566,12 +566,12 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/supabase-js/2.0.0-rc.8:
-    resolution: {integrity: sha512-4FPLWnDTCTKDrX2yklNYplI7apg5repOwFqLf06NuucNubgdqv/MI4wU+djdEf5cUb4XMwRbkw1Ktss2BEsSAA==}
+  /@supabase/supabase-js/2.0.0-rc.10:
+    resolution: {integrity: sha512-0yjcWm7YnyPcuHl4OOhUkWzyyvFpGeuKdK0x5HKVROApadVcUZEz5/Zng8J32TbmD0nSMhU/IDBYhVfjZrLSYw==}
     dependencies:
       '@supabase/functions-js': 2.0.0-rc.1
-      '@supabase/gotrue-js': 2.0.0-rc.3
-      '@supabase/postgrest-js': 1.0.0-rc.4
+      '@supabase/gotrue-js': 2.0.0-rc.4
+      '@supabase/postgrest-js': 1.0.0-rc.5
       '@supabase/realtime-js': 2.0.0-rc.5
       '@supabase/storage-js': 2.0.0-rc.1
       cross-fetch: 3.1.5
@@ -580,8 +580,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/adapter-vercel/1.0.0-next.72:
-    resolution: {integrity: sha512-oNs8FQaYC2NnwDcvX/jc9MDNqXc9HxwGPQNkd+1vBpFVWZl9mShQgCcOMzfTOIH0ka984jYNa0ZawYYHex79xg==}
+  /@sveltejs/adapter-vercel/1.0.0-next.73:
+    resolution: {integrity: sha512-wYm80tDSkwa9YfXHCHqMFMHmGYsQjVWj2oLbQdijQ2k8dnQPq908Pla3IES1cLwtT+fIMbZyh3Xly7mt06FwJg==}
     dependencies:
       '@vercel/nft': 0.22.1
       esbuild: 0.14.54
@@ -590,8 +590,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.478_svelte@3.50.1+vite@3.1.0:
-    resolution: {integrity: sha512-XnsPQg1aQpfgqU3FvuLrfY7HwwQpq82EbW4Y5FybEshsnJkeGGWv4qQUKpR88E0mu8yHqGh0MVZpsbMSteoa/w==}
+  /@sveltejs/kit/1.0.0-next.480_svelte@3.50.1+vite@3.1.0:
+    resolution: {integrity: sha512-RnltVDZFksAkeIZ0wgMQDr4POz3WZxSDy6D/ycIjrz3VXMDYWxKRqmTEI7Yl7TxPgUabeYHGRm/qI+nSXOb/Yw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
