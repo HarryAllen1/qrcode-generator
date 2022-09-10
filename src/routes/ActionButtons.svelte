@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { downloadURI } from '$lib/download';
+	import { fade } from 'svelte/transition';
 
 	export let disabled = false;
 	export let uri = '';
 	export let extension = '';
+
+	let showMessage = false;
 </script>
 
 <div class="flex flex-row">
@@ -36,11 +39,16 @@
 			const res = await fetch(uri ?? '');
 			const blob = await res.blob();
 
-			navigator.clipboard.write([
+			await navigator.clipboard.write([
 				new window.ClipboardItem({
 					[`image/${extension}`]: blob,
 				}),
 			]);
+
+			showMessage = true;
+			setTimeout(() => {
+				showMessage = false;
+			}, 1000);
 		}}
 		class="inline-flex disabled:opacity-60 disabled:saturate-0 mr-4 justify-center rounded-md border border-transparent bg-blue-200 dark:bg-blue-600 text-blue-900 dark:text-white px-4 py-2 text-sm font-medium hover:bg-blue-300 dark:hover:bg-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
 	>
@@ -57,4 +65,5 @@
 		</svg>
 		Copy
 	</button>
+	<p class="m-0" transition:fade class:hidden={!showMessage}>Copied!</p>
 </div>

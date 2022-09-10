@@ -2,8 +2,13 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async () => {
-	// const { imageDataURL, qrCodeImageDataURL, width }: Record<string, string> =
+	// const { qrCodeImageDataURL, width }: Record<string, string> =
 	// 	await request.json();
+
+	// if (!width) return json({ error: 'Missing width' }, { status: 400 });
+	// if (!qrCodeImageDataURL)
+	// 	return json({ error: 'Missing qrCodeImageDataURL' }, { status: 400 });
+
 	// const canvas = createCanvas(parseInt(width), parseInt(width));
 	// const ctx = canvas.getContext('2d');
 	// ctx.drawImage(
@@ -16,7 +21,5 @@ export const POST: RequestHandler = async () => {
 	// return json({
 	// 	imageDataURL: canvas.toDataURL(),
 	// });
-	return json({
-		message: 'Not implemented',
-	});
+	return json({});
 };
