@@ -13,7 +13,8 @@
 			const { error } = await supabase.auth.signInWithOtp({ email });
 			if (error) throw error;
 			alert('Check your email for the login link!');
-		} catch (error: any) {
+		} catch (err) {
+			const error = err as { message: string; error_description: string };
 			alert(error?.error_description || error?.message);
 		} finally {
 			loading = false;
@@ -28,7 +29,8 @@
 				options: { redirectTo: $page.url.origin },
 			});
 			if (error) throw error;
-		} catch (error: any) {
+		} catch (err) {
+			const error = err as { message: string; error_description: string };
 			alert(error?.error_description || error?.message);
 		} finally {
 			loading = false;
