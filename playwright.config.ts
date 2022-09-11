@@ -15,8 +15,6 @@ const devicesToTest = [
 	devices['Desktop Edge'],
 	devices['iPhone 11'],
 	devices['iPhone 11 landscape'],
-	devices['iPad (gen 6)'],
-	devices['iPad (gen 6) landscape'],
 	devices['Pixel 4'],
 	devices['Pixel 4 landscape'],
 ];
