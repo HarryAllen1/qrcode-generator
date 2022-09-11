@@ -1,3 +1,7 @@
+<script>
+	import Page from '../+page.svelte';
+</script>
+
 <!-- <script lang="ts">
 	import { selfQr } from '../../lib/selfQrData';
 	import { page } from '$app/stores';
@@ -13,3 +17,5 @@
 {:catch error}
 	<p>Something went wrong: {error.message}</p>
 {/await} -->
+
+<Page />
