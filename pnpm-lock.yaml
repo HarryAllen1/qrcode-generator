@@ -49,8 +49,8 @@ devDependencies:
     specifier: 5.37.0
     version: 5.37.0_irgkl5vooow2ydyo6aokmferha
   autoprefixer:
-    specifier: 10.4.10
-    version: 10.4.10_postcss@8.4.16
+    specifier: 10.4.11
+    version: 10.4.11_postcss@8.4.16
   eslint:
     specifier: 8.23.1
     version: 8.23.1
@@ -1077,8 +1077,8 @@ packages:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
     dev: true
 
-  /autoprefixer/10.4.10_postcss@8.4.16:
-    resolution: {integrity: sha512-nMaiDARyp1e74c8IeAXkr+BmFKa8By4Zak7tyaNPF09Iu39WFpNXOWrVirmXjKr+5cOyERwvtbMOLYz6iBJYgQ==}
+  /autoprefixer/10.4.11_postcss@8.4.16:
+    resolution: {integrity: sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
