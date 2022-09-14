@@ -29,10 +29,10 @@ devDependencies:
     version: 1.25.2
   '@sveltejs/adapter-vercel':
     specifier: next
-    version: 1.0.0-next.74
+    version: 1.0.0-next.75
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.481_svelte@3.50.1+vite@3.1.0
+    version: 1.0.0-next.482_svelte@3.50.1+vite@3.1.0
   '@tailwindcss/typography':
     specifier: 0.5.7
     version: 0.5.7_tailwindcss@3.1.8
@@ -49,8 +49,8 @@ devDependencies:
     specifier: 5.37.0
     version: 5.37.0_irgkl5vooow2ydyo6aokmferha
   autoprefixer:
-    specifier: 10.4.8
-    version: 10.4.8_postcss@8.4.16
+    specifier: 10.4.10
+    version: 10.4.10_postcss@8.4.16
   eslint:
     specifier: 8.23.1
     version: 8.23.1
@@ -571,8 +571,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/adapter-vercel/1.0.0-next.74:
-    resolution: {integrity: sha512-BMAeib/aH0JdCyMncnugZteVMc47DfKtqE49BpH8JtiIBna34mkYevUWFLyIEVjoNUu2hHr9GMZXBI0q7JL8tQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.75:
+    resolution: {integrity: sha512-aFy24cx/N7fiTkmSMKB/9BTPJe5Dqre7mUMGwzguugr8FlZw/uvkjcNoqr7XrLqPCB+C550vQOJ/KeEV0g3NwQ==}
     dependencies:
       '@vercel/nft': 0.22.1
       esbuild: 0.15.6
@@ -581,8 +581,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.481_svelte@3.50.1+vite@3.1.0:
-    resolution: {integrity: sha512-rgt6KKjUmx/S/a/duntAp+yds9F3fSm6uq8nvfWHuT1aVGSC5sOdNDrKqck7PCUc9/GPJ6WJu3et5R69hqevRw==}
+  /@sveltejs/kit/1.0.0-next.482_svelte@3.50.1+vite@3.1.0:
+    resolution: {integrity: sha512-ZPWVtY1ZBpVtqblZBuvVWyAEblV/89PXzlUKXPX5+4BpM3UbKNlXRXwNOC3MrcyniYuJQtU7uLvFZvQHcOKEcQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -1077,15 +1077,15 @@ packages:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
     dev: true
 
-  /autoprefixer/10.4.8_postcss@8.4.16:
-    resolution: {integrity: sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw==}
+  /autoprefixer/10.4.10_postcss@8.4.16:
+    resolution: {integrity: sha512-nMaiDARyp1e74c8IeAXkr+BmFKa8By4Zak7tyaNPF09Iu39WFpNXOWrVirmXjKr+5cOyERwvtbMOLYz6iBJYgQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.3
-      caniuse-lite: 1.0.30001383
+      caniuse-lite: 1.0.30001399
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1143,7 +1143,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001383
+      caniuse-lite: 1.0.30001399
       electron-to-chromium: 1.4.230
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
@@ -1183,8 +1183,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /caniuse-lite/1.0.30001383:
-    resolution: {integrity: sha512-swMpEoTp5vDoGBZsYZX7L7nXHe6dsHxi9o6/LKf/f0LukVtnrxly5GVb/fWdCDTqi/yw6Km6tiJ0pmBacm0gbg==}
+  /caniuse-lite/1.0.30001399:
+    resolution: {integrity: sha512-4vQ90tMKS+FkvuVWS5/QY1+d805ODxZiKFzsU8o/RsVJz49ZSRR8EjykLJbqhzdPgadbX6wB538wOzle3JniRA==}
     dev: true
 
   /chalk/4.1.2:
