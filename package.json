@@ -24,7 +24,7 @@
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "0.5.7",
 		"@types/qrcode": "1.5.0",
-		"@types/sharp": "0.30.5",
+		"@types/sharp": "0.31.0",
 		"@typescript-eslint/eslint-plugin": "5.37.0",
 		"@typescript-eslint/parser": "5.37.0",
 		"autoprefixer": "10.4.10",
