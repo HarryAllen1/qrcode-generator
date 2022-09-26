@@ -67,8 +67,8 @@ devDependencies:
     specifier: 2.7.1
     version: 2.7.1
   prettier-plugin-svelte:
-    specifier: 2.7.0
-    version: 2.7.0_nk6d2fkgcllkkdynqbuearcure
+    specifier: 2.7.1
+    version: 2.7.1_nk6d2fkgcllkkdynqbuearcure
   sass:
     specifier: 1.55.0
     version: 1.55.0
@@ -2646,8 +2646,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.7.0_nk6d2fkgcllkkdynqbuearcure:
-    resolution: {integrity: sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==}
+  /prettier-plugin-svelte/2.7.1_nk6d2fkgcllkkdynqbuearcure:
+    resolution: {integrity: sha512-H33qjhCBZyd9Zr1A5hUAYDh7j0Mf97uvy7XcA7CP4nNSYrNcPvBUf7wI8K9NptWTIs0S41QtgTWmJIUiGlEBtw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
