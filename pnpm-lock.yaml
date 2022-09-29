@@ -17,8 +17,8 @@ dependencies:
     specifier: 1.5.1
     version: 1.5.1
   sharp:
-    specifier: 0.31.0
-    version: 0.31.0
+    specifier: 0.31.1
+    version: 0.31.1
 
 devDependencies:
   '@algolia/client-search':
@@ -32,7 +32,7 @@ devDependencies:
     version: 1.0.0-next.77
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.504_svelte@3.50.1+vite@3.1.4
+    version: 1.0.0-next.505_svelte@3.50.1+vite@3.1.4
   '@tailwindcss/typography':
     specifier: 0.5.7
     version: 0.5.7_tailwindcss@3.1.8
@@ -581,8 +581,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.504_svelte@3.50.1+vite@3.1.4:
-    resolution: {integrity: sha512-KrhlSHT3aCVnhRgUoN6aGIjIw3nWEdNwfoZcE1x65F5D7Ju/K9D8dQwyal9v0aBAZyN9nFuXxsYGaMLE9sppfw==}
+  /@sveltejs/kit/1.0.0-next.505_svelte@3.50.1+vite@3.1.4:
+    resolution: {integrity: sha512-vg2WvWiUB7useJZOKbdM8WOXv10WD7SVDER74IXd1t/TWb/uXHzwMQ/ZAsXZFdxQsz1cDGFub3iC76PW+j58Pg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -2845,8 +2845,8 @@ packages:
     resolution: {integrity: sha512-1jeBGaKNGdEq4FgIrORu/N570dwoPYio8lSoYLWmX7sQ//0JY08Xh9o5pBcgmHQ/MbsYp/aZnOe1s1lIsbLprQ==}
     dev: true
 
-  /sharp/0.31.0:
-    resolution: {integrity: sha512-ft96f8WzGxavg0rkLpMw90MTPMUZDyf0tHjPPh8Ob59xt6KzX8EqtotcqZGUm7kwqpX2pmYiyYX2LL0IZ/FDEw==}
+  /sharp/0.31.1:
+    resolution: {integrity: sha512-GR8M1wBwOiFKLkm9JPun27OQnNRZdHfSf9VwcdZX6UrRmM1/XnOrLFTF0GAil+y/YK4E6qcM/ugxs80QirsHxg==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
