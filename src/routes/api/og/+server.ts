@@ -1,3 +1,4 @@
+import {} from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ fetch, url }) => {
@@ -10,10 +11,16 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
 			errorCorrectionParam: 'M',
 		}),
 	});
+	const uri = ((await img.json()).data as string).replace(
+		'data:image/png;base64,',
+		''
+	);
+	const buffer = Buffer.from(uri, 'base64');
 
-	return new Response((await img.json()).data, {
+	return new Response(buffer, {
 		headers: {
 			'Content-Type': 'image/png',
+			'Content-Length': buffer.length.toString(),
 		},
 	});
 };

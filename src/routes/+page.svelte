@@ -127,7 +127,9 @@
 <svelte:head>
 	<meta
 		property="og:image"
-		content={`https://generate-qr.codes/api/og?text=${textParam}`}
+		content={`https://generate-qr.codes/api/og?text=${encodeURIComponent(
+			textParam ?? 'https://generate-qr.codes/'
+		)}`}
 	/>
 </svelte:head>
 
