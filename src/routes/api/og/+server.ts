@@ -6,14 +6,14 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
 		method: 'POST',
 		body: JSON.stringify({
 			text: textParam ?? 'https://generate-qr.codes',
-			format: 'svg',
+			format: 'png',
 			errorCorrectionParam: 'M',
 		}),
 	});
 
 	return new Response((await img.json()).data, {
 		headers: {
-			'Content-Type': 'image/svg+xml',
+			'Content-Type': 'image/png',
 		},
 	});
 };
