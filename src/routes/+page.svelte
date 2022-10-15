@@ -19,6 +19,9 @@
 	import Dialog, { openModal } from '$lib/Dialog.svelte';
 	import { page } from '$app/stores';
 	import { selfQr } from '$lib/selfQrData';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 
 	$: rawData = new Response();
 
@@ -53,7 +56,7 @@
 
 	let message: string;
 
-	$: data = fetch(`${API_ROOT}`, {
+	$: qrData = fetch(`${API_ROOT}`, {
 		method: 'POST',
 		body: JSON.stringify({
 			format: selectedFormat.format,
@@ -70,7 +73,7 @@
 	});
 
 	$: if (rawData.status !== 200) {
-		data.then((d) => {
+		qrData.then((d) => {
 			message = d.message;
 		});
 	}
@@ -124,11 +127,15 @@
 	// let fileName = '';
 </script>
 
+<svelte:head>
+	<meta property="og:image" content={data.ogImage} />
+</svelte:head>
+
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
 <DarkModeSwitch />
 <div class="flex flex-col md:flex-row md:space-x-4 md:space-y-4">
 	<div class="flex flex-col">
-		{#await data}
+		{#await qrData}
 			<img
 				class="w-96 pixelated shadow-md"
 				id="placeholder-image"
