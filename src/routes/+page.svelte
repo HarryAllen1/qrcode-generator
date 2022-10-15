@@ -19,9 +19,6 @@
 	import Dialog, { openModal } from '$lib/Dialog.svelte';
 	import { page } from '$app/stores';
 	import { selfQr } from '$lib/selfQrData';
-	import type { PageData } from './$types';
-
-	export let data: PageData;
 
 	$: rawData = new Response();
 
@@ -128,7 +125,7 @@
 </script>
 
 <svelte:head>
-	<meta property="og:image" content={data.ogImage} />
+	<meta property="og:image" content={`/api/og?text=${textParam}`} />
 </svelte:head>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
