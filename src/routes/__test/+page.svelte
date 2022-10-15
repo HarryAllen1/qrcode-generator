@@ -1,6 +1,6 @@
-<script>
-	import Page from '../+page.svelte';
-</script>
+<!-- <script>
+	import Page from '../+page.svelte'; -->
+<!-- </script> -->
 
 <!-- <script lang="ts">
 	import { selfQr } from '../../lib/selfQrData';
@@ -18,4 +18,4 @@
 	<p>Something went wrong: {error.message}</p>
 {/await} -->
 
-<Page />
+<!-- <Page /> -->
