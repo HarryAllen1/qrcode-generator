@@ -125,7 +125,10 @@
 </script>
 
 <svelte:head>
-	<meta property="og:image" content={`/api/og?text=${textParam}`} />
+	<meta
+		property="og:image"
+		content={`https://generate-qr.codes/api/og?text=${textParam}`}
+	/>
 </svelte:head>
 
 <h1 class="text-black dark:text-white">QR Code Generator</h1>
