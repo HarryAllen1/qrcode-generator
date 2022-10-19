@@ -11,8 +11,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2_svelte@3.52.0
   '@supabase/supabase-js':
-    specifier: 2.0.1
-    version: 2.0.1
+    specifier: 2.0.2
+    version: 2.0.2
   qrcode:
     specifier: 1.5.1
     version: 1.5.1
@@ -580,8 +580,8 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/supabase-js/2.0.1:
-    resolution: {integrity: sha512-0SqF37KvZeHDjean5qyntqJA7scQEczA63WJyHOXyqMFq7PPuZNZUrS2/Hw7k1mcJjXLnT+2xeYA5kgGopVMJg==}
+  /@supabase/supabase-js/2.0.2:
+    resolution: {integrity: sha512-ssRxPvkMcERx8bsrEaBjvRpNRz2V4ZjObPh5ky8CVxXH1vEWIb10Qq6WMG0LB32Z5lEWplEPy0zfy+LIetcNRQ==}
     dependencies:
       '@supabase/functions-js': 2.0.0
       '@supabase/gotrue-js': 2.0.1
@@ -2603,7 +2603,7 @@ packages:
     resolution: {integrity: sha512-YPG3Co0luSu6GwOBsmIdGW6Wx0NyNDLg/hriIyDllVsNwnI6UeqaWShxC3lbH4LtEQUgoLP3XR1ndXiDAWvmRw==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
     dev: false
 
   /node-addon-api/5.0.0:
@@ -3072,7 +3072,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-    dev: true
 
   /set-blocking/2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
