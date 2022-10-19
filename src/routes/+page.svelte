@@ -114,6 +114,7 @@
 
 		backgroundIroColorPicker.on('color:change', (color: iro.Color) => {
 			backgroundColor = color.hexString;
+			transparentBackground = false;
 		});
 	});
 	$: if (foregroundIroColorPicker) {
