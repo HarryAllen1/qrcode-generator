@@ -121,8 +121,8 @@
 		foregroundIroColorPicker.color.hexString = foregroundColor;
 	}
 
-	// let imageUploadButton: HTMLInputElement;
-	// let fileName = '';
+	let imageUploadButton: HTMLInputElement;
+	let fileName = '';
 </script>
 
 <svelte:head>
@@ -483,7 +483,7 @@
 				</p>
 			{/if}
 		</details>
-		<!-- <details>
+		<details>
 			<summary> Icon </summary>
 
 			<input
@@ -505,7 +505,7 @@
 			<p>
 				{fileName || 'No image selected'}
 			</p>
-		</details> -->
+		</details>
 		<details>
 			<summary> Advanced </summary>
 
