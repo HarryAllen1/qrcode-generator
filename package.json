@@ -38,7 +38,7 @@
 		"svelte": "3.52.0",
 		"svelte-check": "2.9.2",
 		"svelte-preprocess": "4.10.7",
-		"tailwindcss": "3.1.8",
+		"tailwindcss": "3.2.0",
 		"tslib": "2.4.0",
 		"typescript": "4.8.4",
 		"vite": "3.1.8",
@@ -49,7 +49,7 @@
 		"@jaames/iro": "5.5.2",
 		"@napi-rs/canvas": "0.1.30",
 		"@rgossiaux/svelte-headlessui": "1.0.2",
-		"@supabase/supabase-js": "2.0.1",
+		"@supabase/supabase-js": "2.0.3",
 		"qrcode": "1.5.1",
 		"sharp": "0.31.1"
 	},

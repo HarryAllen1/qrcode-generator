@@ -2,7 +2,7 @@
 	import { supabase } from '$lib/supabaseClient';
 	import type { Provider } from '@supabase/supabase-js';
 	import { page } from '$app/stores';
-	import DarkModeSwitch from '../../lib/DarkModeSwitch.svelte';
+	import DarkModeSwitch from '$lib/DarkModeSwitch.svelte';
 
 	let loading = false;
 	let email = '';
