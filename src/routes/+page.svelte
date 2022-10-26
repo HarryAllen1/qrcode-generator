@@ -40,7 +40,8 @@
 		{ name: 'High', value: 'H' },
 	];
 
-	const textParam = $page.url.searchParams.get('text');
+	const actualPage = $page;
+	const textParam = actualPage.url.searchParams.get('text');
 
 	$: url = textParam ?? `https://generate-qr.codes/`;
 	$: selectedFormat = format[0];
@@ -128,7 +129,7 @@
 <svelte:head>
 	<meta
 		property="og:image"
-		content={`https://generate-qr.codes/api/og?text=${encodeURIComponent(
+		content={`${actualPage.url.origin}/api/og?text=${encodeURIComponent(
 			textParam ?? 'https://generate-qr.codes/'
 		)}`}
 	/>
