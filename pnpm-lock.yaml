@@ -11,8 +11,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2_svelte@3.52.0
   '@supabase/supabase-js':
-    specifier: 2.0.4
-    version: 2.0.4
+    specifier: 2.1.0
+    version: 2.1.0
   qrcode:
     specifier: 1.5.1
     version: 1.5.1
@@ -32,7 +32,7 @@ devDependencies:
     version: 1.0.0-next.81
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.538_svelte@3.52.0+vite@3.2.1
+    version: 1.0.0-next.544_svelte@3.52.0+vite@3.2.1
   '@tailwindcss/typography':
     specifier: 0.5.7
     version: 0.5.7_tailwindcss@3.2.1
@@ -539,8 +539,8 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/gotrue-js/2.2.1:
-    resolution: {integrity: sha512-CgQaYAJmGbOLPSqan4mjRgGikzsrlkKdPq0UNG7WZQv5HlHJlAYW8HeyNw/SKfIbxQBm8s2dBCeUyX+NdfB2Rw==}
+  /@supabase/gotrue-js/2.3.0:
+    resolution: {integrity: sha512-e50w8LkfbxtI2SJxUbuQNM7pN+Yu3HYkvCLsidwBgivTdcoFOkhFodwLvWSVdeaxY1mH6Gm66RiKeUMn1+BAow==}
     dependencies:
       cross-fetch: 3.1.5
     transitivePeerDependencies:
@@ -572,11 +572,11 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/supabase-js/2.0.4:
-    resolution: {integrity: sha512-Z5uLyJm9bz5LMFnt5d1I6ccxVTdvKbJa0RsYGgKlA+QiyGvBxRRvVh8pqlYP1571DlycGG7bWngNwdv7/pehrg==}
+  /@supabase/supabase-js/2.1.0:
+    resolution: {integrity: sha512-hODrAUDSC6RV6EhwuSMyhaQCF32gij0EBTceuDR+8suJsg7XcyUG0fYgeYecWIvt0nz61xAMY6E+Ywb0tJaAng==}
     dependencies:
       '@supabase/functions-js': 2.0.0
-      '@supabase/gotrue-js': 2.2.1
+      '@supabase/gotrue-js': 2.3.0
       '@supabase/postgrest-js': 1.1.0
       '@supabase/realtime-js': 2.1.0
       '@supabase/storage-js': 2.0.0
@@ -596,8 +596,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.538_svelte@3.52.0+vite@3.2.1:
-    resolution: {integrity: sha512-NRu6+j1Lc0daE2OirlbDCbT/yMf5l5nFln2o1asMA3HL7A244SG+uGGFea4DZ1bdetZ3IhO5xa1MWIGY5Ybb3g==}
+  /@sveltejs/kit/1.0.0-next.544_svelte@3.52.0+vite@3.2.1:
+    resolution: {integrity: sha512-zgQHiSvxiTDjJJROj9mPwIEoT6sAopagDroh89cHKarKc2eK/1nISA2dascKz/atGF8mghOn7RXZPnPofr01fQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
