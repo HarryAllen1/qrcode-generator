@@ -76,8 +76,8 @@ devDependencies:
     specifier: 3.54.0
     version: 3.54.0
   svelte-check:
-    specifier: 2.10.1
-    version: 2.10.1_co2whks5e4yehytucjjegk4w4y
+    specifier: 2.10.2
+    version: 2.10.2_co2whks5e4yehytucjjegk4w4y
   svelte-preprocess:
     specifier: 4.10.7
     version: 4.10.7_2b2355ox4pgzqlwxpco73tftn4
@@ -2992,8 +2992,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.10.1_co2whks5e4yehytucjjegk4w4y:
-    resolution: {integrity: sha512-uscZovyuOPA89NuAkc4vO27mzx//2wFBNtwTsgYcNs7JwaFpJ2TqBawQ/avG7gkieYQ3QXqFUggJZ+s51fQGDQ==}
+  /svelte-check/2.10.2_co2whks5e4yehytucjjegk4w4y:
+    resolution: {integrity: sha512-h1Tuiir0m8J5yqN+Vx6qgKKk1L871e6a9o7rMwVWfu8Qs6Wg7x2R+wcxS3SO3VpW5JCxCat90rxPsZMYgz+HaQ==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
