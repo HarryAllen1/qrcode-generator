@@ -32,7 +32,7 @@ devDependencies:
     version: 1.0.0-next.88_l5ueyfihz3gpzzvvyo2ean5u3e
   '@sveltejs/kit':
     specifier: next
-    version: 1.0.0-next.589_svelte@3.55.0+vite@4.0.1
+    version: 1.0.0-next.589_svelte@3.55.0+vite@4.0.2
   '@tailwindcss/typography':
     specifier: 0.5.8
     version: 0.5.8_tailwindcss@3.2.4
@@ -91,8 +91,8 @@ devDependencies:
     specifier: 4.9.4
     version: 4.9.4
   vite:
-    specifier: 4.0.1
-    version: 4.0.1_sass@1.57.0
+    specifier: 4.0.2
+    version: 4.0.2_sass@1.57.0
   vitepress:
     specifier: 1.0.0-alpha.32
     version: 1.0.0-alpha.32_cct55stpgjbazy6nkz45owp6mu
@@ -753,7 +753,7 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^1.0.0-next.587
     dependencies:
-      '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.0+vite@4.0.1
+      '@sveltejs/kit': 1.0.0-next.589_svelte@3.55.0+vite@4.0.2
       '@vercel/nft': 0.22.1
       esbuild: 0.16.3
     transitivePeerDependencies:
@@ -761,7 +761,7 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.589_svelte@3.55.0+vite@4.0.1:
+  /@sveltejs/kit/1.0.0-next.589_svelte@3.55.0+vite@4.0.2:
     resolution: {integrity: sha512-5ABRw46z9B+cCe/YWhcx+I/azNZg1NCDEkVJifZn8ToFoJ3a1eP0OexNIrvMEWpllMbNMPcJm2TC9tnz9oPfWQ==}
     engines: {node: '>=16.14'}
     hasBin: true
@@ -770,7 +770,7 @@ packages:
       svelte: ^3.54.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.0.0_svelte@3.55.0+vite@4.0.1
+      '@sveltejs/vite-plugin-svelte': 2.0.0_svelte@3.55.0+vite@4.0.2
       '@types/cookie': 0.5.1
       cookie: 0.5.0
       devalue: 4.2.0
@@ -784,12 +784,12 @@ packages:
       svelte: 3.55.0
       tiny-glob: 0.2.9
       undici: 5.14.0
-      vite: 4.0.1_sass@1.57.0
+      vite: 4.0.2_sass@1.57.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/2.0.0_svelte@3.55.0+vite@4.0.1:
+  /@sveltejs/vite-plugin-svelte/2.0.0_svelte@3.55.0+vite@4.0.2:
     resolution: {integrity: sha512-oUFrYQarRv4fppmxdrv00qw3wX8Ycdj0uv33MfpRZyR8K67dyxiOcHnqkB0zSy5sDJA8RC/2aNtYhXJ8NINVHQ==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -802,8 +802,8 @@ packages:
       magic-string: 0.27.0
       svelte: 3.55.0
       svelte-hmr: 0.15.1_svelte@3.55.0
-      vite: 4.0.1_sass@1.57.0
-      vitefu: 0.2.2_vite@4.0.1
+      vite: 4.0.2_sass@1.57.0
+      vitefu: 0.2.2_vite@4.0.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1023,14 +1023,14 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.0.1+vue@3.2.45:
+  /@vitejs/plugin-vue/4.0.0_vite@4.0.2+vue@3.2.45:
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.1_sass@1.57.0
+      vite: 4.0.2_sass@1.57.0
       vue: 3.2.45
     dev: true
 
@@ -3320,8 +3320,8 @@ packages:
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  /vite/4.0.1_sass@1.57.0:
-    resolution: {integrity: sha512-kZQPzbDau35iWOhy3CpkrRC7It+HIHtulAzBhMqzGHKRf/4+vmh8rPDDdv98SWQrFWo6//3ozwsRmwQIPZsK9g==}
+  /vite/4.0.2_sass@1.57.0:
+    resolution: {integrity: sha512-QJaY3R+tFlTagH0exVqbgkkw45B+/bXVBzF2ZD1KB5Z8RiAoiKo60vSUf6/r4c2Vh9jfGBKM4oBI9b4/1ZJYng==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3354,7 +3354,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitefu/0.2.2_vite@4.0.1:
+  /vitefu/0.2.2_vite@4.0.2:
     resolution: {integrity: sha512-8CKEIWPm4B4DUDN+h+hVJa9pyNi7rzc5MYmbxhs1wcMakueGFNWB5/DL30USm9qU3xUPnL4/rrLEAwwFiD1tag==}
     peerDependencies:
       vite: ^3.0.0
@@ -3362,7 +3362,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.0.1_sass@1.57.0
+      vite: 4.0.2_sass@1.57.0
     dev: true
 
   /vitepress/1.0.0-alpha.32_cct55stpgjbazy6nkz45owp6mu:
@@ -3371,12 +3371,12 @@ packages:
     dependencies:
       '@docsearch/css': 3.3.0
       '@docsearch/js': 3.3.0_tbpndr44ulefs3hehwpi2mkf2y
-      '@vitejs/plugin-vue': 4.0.0_vite@4.0.1+vue@3.2.45
+      '@vitejs/plugin-vue': 4.0.0_vite@4.0.2+vue@3.2.45
       '@vue/devtools-api': 6.4.5
       '@vueuse/core': 9.6.0_vue@3.2.45
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.11.1
-      vite: 4.0.1_sass@1.57.0
+      vite: 4.0.2_sass@1.57.0
       vue: 3.2.45
     transitivePeerDependencies:
       - '@algolia/client-search'
