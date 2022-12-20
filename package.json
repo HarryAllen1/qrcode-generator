@@ -20,8 +20,8 @@
 	"devDependencies": {
 		"@algolia/client-search": "4.14.3",
 		"@playwright/test": "1.29.0",
-		"@sveltejs/adapter-vercel": "next",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-vercel": "1.0.0",
+		"@sveltejs/kit": "1.0.1",
 		"@tailwindcss/typography": "0.5.8",
 		"@types/qrcode": "1.5.0",
 		"@types/sharp": "0.31.0",
