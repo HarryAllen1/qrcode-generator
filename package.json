@@ -49,7 +49,7 @@
 		"@jaames/iro": "5.5.2",
 		"@napi-rs/canvas": "0.1.30",
 		"@rgossiaux/svelte-headlessui": "1.0.2",
-		"@supabase/supabase-js": "2.2.1",
+		"@supabase/supabase-js": "2.2.2",
 		"qrcode": "1.5.1",
 		"sharp": "0.31.3"
 	},
