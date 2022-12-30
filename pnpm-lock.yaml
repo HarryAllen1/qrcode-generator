@@ -11,8 +11,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2_svelte@3.55.0
   '@supabase/supabase-js':
-    specifier: 2.2.2
-    version: 2.2.2
+    specifier: 2.2.3
+    version: 2.2.3
   qrcode:
     specifier: 1.5.1
     version: 1.5.1
@@ -742,8 +742,8 @@ packages:
       - encoding
     dev: false
 
-  /@supabase/supabase-js/2.2.2:
-    resolution: {integrity: sha512-xwuaSYghC5GkV/Pj4lzXbC8RnFxpPh5FO6nVMcbQbpGJDduiMyr2PCq3+hinWKmsFBBXvq+UioOZQIWUzVRoYg==}
+  /@supabase/supabase-js/2.2.3:
+    resolution: {integrity: sha512-UOKnbkwtCGpI/yoW5FbiDqV1tvtP+kJkYROosCGS7M+EAaNhklNYaU3l3wNfxpR5LW7wOO1O17cb+5CSRjv/zg==}
     dependencies:
       '@supabase/functions-js': 2.0.0
       '@supabase/gotrue-js': 2.6.1
