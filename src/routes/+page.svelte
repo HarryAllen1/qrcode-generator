@@ -333,7 +333,7 @@
 												? 'text-blue-900 dark:text-blue-300 bg-blue-100 dark:bg-blue-900'
 												: 'text-black dark:text-white'
 										}`}
-									value={person}
+									value={person.format}
 									let:selected
 								>
 									<span
@@ -585,7 +585,7 @@
 													? 'text-blue-900 dark:text-blue-300 bg-blue-100 dark:bg-blue-900'
 													: 'text-black dark:text-white'
 											}`}
-										value={person}
+										value={person.name}
 										let:selected
 									>
 										<span
