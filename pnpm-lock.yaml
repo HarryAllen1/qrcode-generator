@@ -40,8 +40,8 @@ devDependencies:
     specifier: 1.5.0
     version: 1.5.0
   '@types/sharp':
-    specifier: 0.31.0
-    version: 0.31.0
+    specifier: 0.31.1
+    version: 0.31.1
   '@typescript-eslint/eslint-plugin':
     specifier: 5.47.1
     version: 5.47.1_axni7f4fgvh6tlufnh6hwgsifq
@@ -864,8 +864,8 @@ packages:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
     dev: true
 
-  /@types/sharp/0.31.0:
-    resolution: {integrity: sha512-nwivOU101fYInCwdDcH/0/Ru6yIRXOpORx25ynEOc6/IakuCmjOAGpaO5VfUl4QkDtUC6hj+Z2eCQvgXOioknw==}
+  /@types/sharp/0.31.1:
+    resolution: {integrity: sha512-5nWwamN9ZFHXaYEincMSuza8nNfOof8nmO+mcI+Agx1uMUk4/pQnNIcix+9rLPXzKrm1pS34+6WRDbDV0Jn7ag==}
     dependencies:
       '@types/node': 18.11.17
     dev: true
