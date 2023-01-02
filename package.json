@@ -47,7 +47,7 @@
 	"type": "module",
 	"dependencies": {
 		"@jaames/iro": "5.5.2",
-		"@napi-rs/canvas": "0.1.30",
+		"@napi-rs/canvas": "0.1.31",
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"@supabase/supabase-js": "2.2.3",
 		"qrcode": "1.5.1",
