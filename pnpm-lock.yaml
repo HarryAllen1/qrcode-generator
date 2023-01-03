@@ -94,8 +94,8 @@ devDependencies:
     specifier: 4.0.4
     version: 4.0.4_sass@1.57.1
   vitepress:
-    specifier: 1.0.0-alpha.34
-    version: 1.0.0-alpha.34_o6cqkansjq4wdgmzlc3kidtuju
+    specifier: 1.0.0-alpha.35
+    version: 1.0.0-alpha.35_o6cqkansjq4wdgmzlc3kidtuju
 
 packages:
 
@@ -3312,8 +3312,8 @@ packages:
       vite: 4.0.4_sass@1.57.1
     dev: true
 
-  /vitepress/1.0.0-alpha.34_o6cqkansjq4wdgmzlc3kidtuju:
-    resolution: {integrity: sha512-ALJLEZYM0rgXDBV8n6P6VXdR8fMjJJIZpm7QqU6CqJwB6JKHW7RBmokx9RcEtPRg/JshYTXO8f6AKPI9BByxkw==}
+  /vitepress/1.0.0-alpha.35_o6cqkansjq4wdgmzlc3kidtuju:
+    resolution: {integrity: sha512-tJQjJstq+Ryb4pKtlxV4tD8KhxId+DTbR1FRrtJBhA+Vv4nexFHra5M9EgK9jUmoMc3rkyNaw7P3Kkix0ArP1w==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.1
