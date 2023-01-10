@@ -1,7 +1,6 @@
-import {} from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-export const GET: RequestHandler = async ({ fetch, url }) => {
+export const GET = (async ({ fetch, url }) => {
 	const textParam = url.searchParams.get('text');
 	const img = await fetch('/api/qrcode', {
 		method: 'POST',
@@ -23,4 +22,4 @@ export const GET: RequestHandler = async ({ fetch, url }) => {
 			'Content-Length': buffer.length.toString(),
 		},
 	});
-};
+}) satisfies RequestHandler;

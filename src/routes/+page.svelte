@@ -54,7 +54,7 @@
 
 	let message: string;
 
-	$: qrData = fetch(`${API_ROOT}`, {
+	$: qrData = fetch(`${actualPage.url.origin}${API_ROOT}`, {
 		method: 'POST',
 		body: JSON.stringify({
 			format: selectedFormat.format,
