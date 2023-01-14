@@ -26,10 +26,10 @@ devDependencies:
     version: 1.29.2
   '@sveltejs/adapter-vercel':
     specifier: 1.0.2
-    version: 1.0.2_@sveltejs+kit@1.1.0
+    version: 1.0.2_@sveltejs+kit@1.1.1
   '@sveltejs/kit':
-    specifier: 1.1.0
-    version: 1.1.0_svelte@3.55.1+vite@4.0.4
+    specifier: 1.1.1
+    version: 1.1.1_svelte@3.55.1+vite@4.0.4
   '@tailwindcss/typography':
     specifier: 0.5.9
     version: 0.5.9_tailwindcss@3.2.4
@@ -698,12 +698,12 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.2_@sveltejs+kit@1.1.0:
+  /@sveltejs/adapter-vercel/1.0.2_@sveltejs+kit@1.1.1:
     resolution: {integrity: sha512-Ms2cTlqpA8Rf6Pl8GuqC6bLoMdA30W688+wV8i6DcHlLO3Z9NBEZET2jF+tEmRF1jrxxAWEDngdQBfs25eOBxw==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.1.0_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.1.1_svelte@3.55.1+vite@4.0.4
       '@vercel/nft': 0.22.6
       esbuild: 0.16.10
     transitivePeerDependencies:
@@ -711,8 +711,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.1.0_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-SSAOaEpiBtR7l4Y/jN+AGHonpZUQ2tcl4yhE7S+rqSJA8iw8dxiWPVpNe7JI3N70hXVylezTj9I6P3cykq8a1Q==}
+  /@sveltejs/kit/1.1.1_svelte@3.55.1+vite@4.0.4:
+    resolution: {integrity: sha512-5hZef6yTqiLm8fLMFD78udJI3pG9ptSndg3NNmDqxv5fS9KFABkASQwnWB25Pf1HkPNqvL+x4Tl8kyW1N8thKQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -723,7 +723,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.0.4
       '@types/cookie': 0.5.1
       cookie: 0.5.0
-      devalue: 4.2.0
+      devalue: 4.2.2
       esm-env: 1.0.0
       kleur: 4.1.5
       magic-string: 0.27.0
@@ -1481,8 +1481,8 @@ packages:
       minimist: 1.2.7
     dev: true
 
-  /devalue/4.2.0:
-    resolution: {integrity: sha512-mbjoAaCL2qogBKgeFxFPOXAUsZchircF+B/79LD4sHH0+NHfYm8gZpQrskKDn5gENGt35+5OI1GUF7hLVnkPDw==}
+  /devalue/4.2.2:
+    resolution: {integrity: sha512-Pkwd8qrI9O20VJ14fBNHu+on99toTNZFbgWRpZbC0zbDXpnE2WHYcrC1fHhMsF/3Ee+2yaW7vEujAT7fCYgqrA==}
     dev: true
 
   /didyoumean/1.2.2:
