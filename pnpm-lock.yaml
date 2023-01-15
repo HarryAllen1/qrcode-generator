@@ -10,6 +10,9 @@ dependencies:
   '@rgossiaux/svelte-headlessui':
     specifier: 1.0.2
     version: 1.0.2_svelte@3.55.1
+  '@vercel/analytics':
+    specifier: ^0.1.8
+    version: 0.1.8
   qrcode:
     specifier: 1.5.1
     version: 1.5.1
@@ -940,6 +943,12 @@ packages:
       '@typescript-eslint/types': 5.48.1
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/0.1.8:
+    resolution: {integrity: sha512-PQrOI8BJ9qUiVJuQfnKiJd15eDjDJH9TBKsNeMrtelT4NAk7d9mBVz1CoZkvoFnHQ0OW7Xnqmr1F2nScfAnznQ==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dev: false
 
   /@vercel/nft/0.22.6:
     resolution: {integrity: sha512-gTsFnnT4mGxodr4AUlW3/urY+8JKKB452LwF3m477RFUJTAaDmcz2JqFuInzvdybYIeyIv1sSONEJxsxnbQ5JQ==}

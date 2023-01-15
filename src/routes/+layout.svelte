@@ -1,6 +1,15 @@
 <script lang="ts">
-	import '$lib/tailwind.scss';
+	import { browser } from '$app/environment';
 	import '$lib/pre.scss';
+	import '$lib/tailwind.scss';
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		if (browser) {
+			const { inject } = await import('@vercel/analytics');
+			inject();
+		}
+	});
 </script>
 
 <slot />
