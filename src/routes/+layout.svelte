@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { browser, dev } from '$app/environment';
 	import '$lib/pre.scss';
 	import '$lib/tailwind.scss';
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
-		if (browser) {
+		if (browser && !dev) {
 			const { inject } = await import('@vercel/analytics');
 			inject();
 		}
