@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@algolia/client-search": "4.14.3",
-		"@playwright/test": "1.29.2",
+		"@playwright/test": "1.30.0",
 		"@sveltejs/adapter-vercel": "1.0.5",
 		"@sveltejs/kit": "1.2.6",
 		"@tailwindcss/typography": "0.5.9",
