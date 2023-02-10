@@ -12,7 +12,7 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			runtime: 'node18.x',
+			runtime: 'nodejs18.x',
 		}),
 	},
 };
