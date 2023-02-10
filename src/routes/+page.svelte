@@ -192,7 +192,7 @@
 		{/await}
 	</div>
 	<div>
-		<h2 class="mt-2">Options</h2>
+		<h2 class="mt-2 dark:text-white">Options</h2>
 
 		<p class="mb-1">
 			Text/URL <button
