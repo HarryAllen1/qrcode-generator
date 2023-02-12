@@ -122,8 +122,8 @@
 		foregroundIroColorPicker.color.hexString = foregroundColor;
 	}
 
-	// let imageUploadButton: HTMLInputElement;
-	// let fileName = '';
+	let imageUploadButton: HTMLInputElement;
+	let fileName = '';
 </script>
 
 <svelte:head>
@@ -246,42 +246,37 @@
 				</svg>
 			</button>
 			<Dialog open={$openModal === 'format'} title="Image Format">
+				PNG
+				<ul><li>Good for basically anything</li></ul>
+
+				JPG
+				<ul><li>Better for printing</li></ul>
+
+				WEBP
 				<ul>
 					<li>
-						PNG <ul><li>Good for basically anything</li></ul>
+						Great for websites, but lacks compatibility with other programs.
 					</li>
+				</ul>
+
+				AVIF
+				<ul>
 					<li>
-						JPG <ul><li>Better for printing</li></ul>
+						Currently unsupported due to too slow processing, often resulting in
+						timeouts.
 					</li>
+				</ul>
+
+				GIF
+				<ul>
+					<li>Good for animations. Except QR codes don't animate.</li>
+				</ul>
+
+				SVG
+				<ul>
 					<li>
-						WEBP <ul>
-							<li>
-								Great for websites, but lacks compatibility with other programs.
-							</li>
-						</ul>
-					</li>
-					<li>
-						AVIF <ul>
-							<li>
-								Currently unsupported due to too slow processing, often
-								resulting in timeouts.
-							</li>
-						</ul>
-					</li>
-					<li>
-						GIF
-						<ul>
-							<li>Good for animations. Except QR codes don't animate.</li>
-						</ul>
-					</li>
-					<li>
-						SVG
-						<ul>
-							<li>
-								Provides the highest quality, but only works in very certain
-								scenarios. Great for editing vector graphics and posters.
-							</li>
-						</ul>
+						Provides the highest quality, but only works in very certain
+						scenarios. Great for editing vector graphics and posters.
 					</li>
 				</ul>
 			</Dialog>
@@ -484,7 +479,7 @@
 				</p>
 			{/if}
 		</details>
-		<!-- <details>
+		<details>
 			<summary> Icon </summary>
 
 			<input
@@ -506,7 +501,7 @@
 			<p>
 				{fileName || 'No image selected'}
 			</p>
-		</details> -->
+		</details>
 		<details>
 			<summary> Advanced </summary>
 
