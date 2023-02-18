@@ -28,8 +28,8 @@ devDependencies:
     specifier: 1.30.0
     version: 1.30.0
   '@sveltejs/adapter-vercel':
-    specifier: 2.0.2
-    version: 2.0.2_@sveltejs+kit@1.7.1
+    specifier: 2.0.4
+    version: 2.0.4_@sveltejs+kit@1.7.1
   '@sveltejs/kit':
     specifier: 1.7.1
     version: 1.7.1_svelte@3.55.1+vite@4.1.2
@@ -701,8 +701,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-vercel/2.0.2_@sveltejs+kit@1.7.1:
-    resolution: {integrity: sha512-Mn80jy3rPNWB9iBp93MHXWwOh1qyxNzMNal0Dd80rD3As5Qi5L3lGhr1cIZ3T3Y3giwAVxzjMiHEflaUb8sjqg==}
+  /@sveltejs/adapter-vercel/2.0.4_@sveltejs+kit@1.7.1:
+    resolution: {integrity: sha512-5tN3sCMQtN/ZV7O26hEVpylIZMMPNkDaDmXxDdEyUZGYpO9x9FOa2CN1CbMQBBGAiCuMxgmtjlWFz4GkYXRU+Q==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
