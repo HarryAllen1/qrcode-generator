@@ -47,7 +47,7 @@
 	"type": "module",
 	"dependencies": {
 		"@jaames/iro": "5.5.2",
-		"@napi-rs/canvas": "0.1.36",
+		"@napi-rs/canvas": "0.1.37",
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"@vercel/analytics": "^0.1.8",
 		"qrcode": "1.5.1",
