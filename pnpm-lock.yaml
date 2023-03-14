@@ -70,17 +70,17 @@ devDependencies:
     specifier: 2.9.0
     version: 2.9.0_gan2xfhhcbz3kbkivttwsjndea
   sass:
-    specifier: 1.59.2
-    version: 1.59.2
+    specifier: 1.59.3
+    version: 1.59.3
   svelte:
     specifier: 3.56.0
     version: 3.56.0
   svelte-check:
     specifier: 3.1.4
-    version: 3.1.4_4xz4jmvf5yn2jlmkfuly4q7tmq
+    version: 3.1.4_yhvy4yi2prhuovgn2kq54qssrm
   svelte-preprocess:
     specifier: 5.0.1
-    version: 5.0.1_igsa677tvofqmdof2n6zs6qfdm
+    version: 5.0.1_rvm2u7e6gxkflv5by2ajogye6m
   tailwindcss:
     specifier: 3.2.7
     version: 3.2.7_postcss@8.4.21
@@ -92,10 +92,10 @@ devDependencies:
     version: 4.9.5
   vite:
     specifier: 4.1.4
-    version: 4.1.4_sass@1.59.2
+    version: 4.1.4_sass@1.59.3
   vitepress:
     specifier: 1.0.0-alpha.58
-    version: 1.0.0-alpha.58_rsumd67n65m4pc2ih6ynvkwvqq
+    version: 1.0.0-alpha.58_j36ovysbkmr2q53fo3vjcvhd6u
 
 packages:
 
@@ -794,7 +794,7 @@ packages:
       svelte: 3.56.0
       tiny-glob: 0.2.9
       undici: 5.20.0
-      vite: 4.1.4_sass@1.59.2
+      vite: 4.1.4_sass@1.59.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -812,7 +812,7 @@ packages:
       magic-string: 0.27.0
       svelte: 3.56.0
       svelte-hmr: 0.15.1_svelte@3.56.0
-      vite: 4.1.4_sass@1.59.2
+      vite: 4.1.4_sass@1.59.3
       vitefu: 0.2.4_vite@4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -1039,7 +1039,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.4_sass@1.59.2
+      vite: 4.1.4_sass@1.59.3
       vue: 3.2.47
     dev: true
 
@@ -2734,8 +2734,8 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /sass/1.59.2:
-    resolution: {integrity: sha512-jJyO6SmbzkJexF8MUorHx5tAilcgabioYxT/BHbY4+OvoqmbHxsYlrjZ8Adhqcgl6Zqwie0TgMXLCAmPFxXOuw==}
+  /sass/1.59.3:
+    resolution: {integrity: sha512-QCq98N3hX1jfTCoUAsF3eyGuXLsY7BCnCEg9qAact94Yc21npG2/mVOqoDvE0fCbWDqiM4WlcJQla0gWG2YlxQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -2913,7 +2913,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/3.1.4_4xz4jmvf5yn2jlmkfuly4q7tmq:
+  /svelte-check/3.1.4_yhvy4yi2prhuovgn2kq54qssrm:
     resolution: {integrity: sha512-25Lb46ZS4IK/XpBMe4IBMrtYf23V8alqBX+szXoccb7uM0D2Wqq5rMRzYBONZnFVuU1bQG3R50lyIT5eRewv2g==}
     hasBin: true
     peerDependencies:
@@ -2926,7 +2926,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.56.0
-      svelte-preprocess: 5.0.1_igsa677tvofqmdof2n6zs6qfdm
+      svelte-preprocess: 5.0.1_rvm2u7e6gxkflv5by2ajogye6m
       typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -2949,7 +2949,7 @@ packages:
       svelte: 3.56.0
     dev: true
 
-  /svelte-preprocess/5.0.1_igsa677tvofqmdof2n6zs6qfdm:
+  /svelte-preprocess/5.0.1_rvm2u7e6gxkflv5by2ajogye6m:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -2992,7 +2992,7 @@ packages:
       detect-indent: 6.1.0
       magic-string: 0.27.0
       postcss: 8.4.21
-      sass: 1.59.2
+      sass: 1.59.3
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 3.56.0
@@ -3170,7 +3170,7 @@ packages:
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  /vite/4.1.4_sass@1.59.2:
+  /vite/4.1.4_sass@1.59.3:
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3199,7 +3199,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.12.1
-      sass: 1.59.2
+      sass: 1.59.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -3212,10 +3212,10 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.4_sass@1.59.2
+      vite: 4.1.4_sass@1.59.3
     dev: true
 
-  /vitepress/1.0.0-alpha.58_rsumd67n65m4pc2ih6ynvkwvqq:
+  /vitepress/1.0.0-alpha.58_j36ovysbkmr2q53fo3vjcvhd6u:
     resolution: {integrity: sha512-aENSAiE2uKMoQPwBTELY8Nig5qSWrmAl+MgsO3l/TE8At6kXii+2rseEId/bVfT700JeucYdqtCgWxu+LwpYIw==}
     hasBin: true
     dependencies:
@@ -3226,7 +3226,7 @@ packages:
       '@vueuse/core': 9.13.0_vue@3.2.47
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.14.1
-      vite: 4.1.4_sass@1.59.2
+      vite: 4.1.4_sass@1.59.3
       vue: 3.2.47
     transitivePeerDependencies:
       - '@algolia/client-search'
