@@ -94,8 +94,8 @@ devDependencies:
     specifier: 4.2.1
     version: 4.2.1_sass@1.59.3
   vitepress:
-    specifier: 1.0.0-alpha.60
-    version: 1.0.0-alpha.60_j36ovysbkmr2q53fo3vjcvhd6u
+    specifier: 1.0.0-alpha.61
+    version: 1.0.0-alpha.61_j36ovysbkmr2q53fo3vjcvhd6u
 
 packages:
 
@@ -1224,8 +1224,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.2.1+vue@3.2.47:
-    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+  /@vitejs/plugin-vue/4.1.0_vite@4.2.1+vue@3.2.47:
+    resolution: {integrity: sha512-++9JOAFdcXI3lyer9UKUV4rfoQ3T1RN8yDqoCLar86s0xQct5yblxAE+yWgRnU5/0FOlVCpTZpYSBV/bGWrSrQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
@@ -3436,13 +3436,13 @@ packages:
       vite: 4.2.1_sass@1.59.3
     dev: true
 
-  /vitepress/1.0.0-alpha.60_j36ovysbkmr2q53fo3vjcvhd6u:
-    resolution: {integrity: sha512-GI5iLDkZRqGEPixbSloT+p6pbKcMh9ykRRxt8vf9AjV1gaPit6Stg/t9WNxTdIhKVCuQMexGs1605DNApSRK2A==}
+  /vitepress/1.0.0-alpha.61_j36ovysbkmr2q53fo3vjcvhd6u:
+    resolution: {integrity: sha512-NvzERVS3/TU9YkYcaiK7yNSe0zY9UcSV58tx3mxbvVLCuwRykzO4OWbl6vQT6Ut6YGuZU1y3Z5WcSS+fHfaxJA==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
       '@docsearch/js': 3.3.3_2xdflmy6sc2qhwxavtux3g5lt4
-      '@vitejs/plugin-vue': 4.0.0_vite@4.2.1+vue@3.2.47
+      '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 9.13.0_vue@3.2.47
       body-scroll-lock: 4.0.0-beta.0
