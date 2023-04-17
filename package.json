@@ -42,7 +42,7 @@
 		"tslib": "2.5.0",
 		"typescript": "5.0.4",
 		"vite": "4.2.1",
-		"vitepress": "1.0.0-alpha.71"
+		"vitepress": "1.0.0-alpha.72"
 	},
 	"type": "module",
 	"dependencies": {
