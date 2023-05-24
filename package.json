@@ -18,7 +18,7 @@
 		"docs:serve": "vitepress serve docs"
 	},
 	"devDependencies": {
-		"@algolia/client-search": "4.17.0",
+		"@algolia/client-search": "4.17.1",
 		"@playwright/test": "1.34.2",
 		"@sveltejs/adapter-vercel": "2.4.3",
 		"@sveltejs/kit": "1.18.0",
