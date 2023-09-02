@@ -12,8 +12,8 @@ dependencies:
     specifier: 0.1.44
     version: 0.1.44
   '@rgossiaux/svelte-headlessui':
-    specifier: 1.0.2
-    version: 1.0.2(svelte@3.59.2)
+    specifier: 2.0.0
+    version: 2.0.0(svelte@3.59.2)
   '@vercel/analytics':
     specifier: ^0.1.8
     version: 0.1.11
@@ -966,10 +966,10 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@rgossiaux/svelte-headlessui@1.0.2(svelte@3.59.2):
-    resolution: {integrity: sha512-sauopYTSivhzXe1kAvgawkhyYJcQlK8Li3p0d2OtcCIVprOzdbard5lbqWB4xHDv83zAobt2mR08oizO2poHLQ==}
+  /@rgossiaux/svelte-headlessui@2.0.0(svelte@3.59.2):
+    resolution: {integrity: sha512-ksh245HqMM8yqkzd/OyAK2FCHZYOSA3ldLIHab7C9S60FmifqT24JFVgi8tZpsDEMk3plbfQvfah93n5IEi8sg==}
     peerDependencies:
-      svelte: ^3.44.0
+      svelte: ^3.47.0
     dependencies:
       svelte: 3.59.2
     dev: false
