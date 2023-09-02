@@ -48,7 +48,7 @@
 	"dependencies": {
 		"@jaames/iro": "5.5.2",
 		"@napi-rs/canvas": "0.1.44",
-		"@rgossiaux/svelte-headlessui": "1.0.2",
+		"@rgossiaux/svelte-headlessui": "2.0.0",
 		"@vercel/analytics": "^0.1.8",
 		"qrcode": "1.5.3",
 		"sharp": "0.32.5"
