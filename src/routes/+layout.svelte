@@ -1,16 +1,20 @@
 <script lang="ts">
-	import { browser, dev } from '$app/environment';
-	import '$lib/pre.scss';
-	import '$lib/tailwind.scss';
+	import { dev } from '$app/environment';
 	import { onMount } from 'svelte';
-	import './global.scss';
+	import '../app.css';
+	import GAnalytics from './GAnalytics.svelte';
 
 	onMount(async () => {
-		if (browser && !dev) {
+		if (!dev) {
 			const { inject } = await import('@vercel/analytics');
+
 			inject();
 		}
 	});
 </script>
 
 <slot />
+
+{#if !dev}
+	<GAnalytics />
+{/if}

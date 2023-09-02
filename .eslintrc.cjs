@@ -1,30 +1,32 @@
-/** @type {import('@typescript-eslint/utils').TSESLint.Linter.Config} */
-const config = {
+module.exports = {
 	root: true,
-	parser: '@typescript-eslint/parser',
 	extends: [
 		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended-type-checked',
+		'plugin:@typescript-eslint/stylistic-type-checked',
+		'plugin:svelte/recommended',
 		'prettier',
 	],
-	plugins: ['svelte3', '@typescript-eslint'],
-	ignorePatterns: ['*.cjs'],
-	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
-	settings: {
-		'svelte3/typescript': () => require('typescript'),
-	},
+	parser: '@typescript-eslint/parser',
+	plugins: ['@typescript-eslint'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
+		extraFileExtensions: ['.svelte'],
+		project: './tsconfig.json',
 	},
 	env: {
 		browser: true,
 		es2017: true,
 		node: true,
 	},
-	rules: {
-		'@typescript-eslint/ban-ts-comment': 'off',
-	},
+	overrides: [
+		{
+			files: ['*.svelte'],
+			parser: 'svelte-eslint-parser',
+			parserOptions: {
+				parser: '@typescript-eslint/parser',
+			},
+		},
+	],
 };
-
-module.exports = config;
