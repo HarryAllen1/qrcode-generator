@@ -51,7 +51,7 @@
 		"@rgossiaux/svelte-headlessui": "1.0.2",
 		"@vercel/analytics": "^0.1.8",
 		"qrcode": "1.5.3",
-		"sharp": "0.32.5"
+		"sharp": "0.32.6"
 	},
 	"engines": {
 		"pnpm": ">=8.0.0"
